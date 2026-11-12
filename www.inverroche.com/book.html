@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Modal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="page">
+    <button id="openModal" class="open-btn">Book Now</button>
+  </main>
+
+  <div class="overlay" id="overlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+      <div class="modal__hero">
+        <button class="modal__close" id="closeModal" aria-label="Close">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#1a1a1a" stroke-width="1.6" stroke-linecap="round">
+            <path d="M3 3l10 10M13 3L3 13"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal__body">
+
+        <section class="modal__main">
+          <h2 class="modal__title" id="modalTitle">Stonefield Distillery - Guided Tours</h2>
+          <p class="modal__location">Stellenbosch, Western Cape</p>
+
+          <nav class="tabs" role="tablist">
+            <button class="tab" role="tab" data-tab="overview">Overview</button>
+            <button class="tab is-active" role="tab" data-tab="experiences">Experiences</button>
+            <button class="tab" role="tab" data-tab="photos">Photos</button>
+          </nav>
+
+          <div class="tab-panel" id="panel-overview" hidden>
+            <p class="panel-text">Add your overview copy here.</p>
+          </div>
+
+          <div class="tab-panel is-active" id="panel-experiences">
+            <label class="experience">
+              <div class="experience__info">
+                <p class="experience__desc">
+                  <strong>Guided Distillery Tour</strong> – A behind-the-scenes look at how our spirits are
+                  brought to life – from ingredient selection to copper pot stills – ending with a
+                  complimentary tasting. A complimentary tasting of our 3 gins, paired with our bespoke
+                  chocolates, is included in the guided tour.
+                </p>
+                <p class="experience__price"><strong>Price:</strong> R280.00 (per person)</p>
+              </div>
+              <input type="radio" name="experience" class="experience__radio" checked>
+              <span class="experience__circle"></span>
+            </label>
+          </div>
+
+          <div class="tab-panel" id="panel-photos" hidden>
+            <p class="panel-text">Add your photo gallery here.</p>
+          </div>
+        </section>
+
+        <aside class="modal__side">
+          <form class="booking" id="bookingForm">
+            <select id="guests" class="field" aria-label="Guests">
+              <option value="1">1 Person</option>
+              <option value="2">2 People</option>
+              <option value="3">3 People</option>
+              <option value="4">4 People</option>
+              <option value="5">5 People</option>
+              <option value="6">6 People</option>
+            </select>
+            <input type="date" id="date" class="field" aria-label="Date">
+            <input type="time" id="time" class="field" aria-label="Time">
+            <button type="submit" class="book-btn">Book Now</button>
+          </form>
+          <p class="side-note">Book your experience directly with our booking partner</p>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

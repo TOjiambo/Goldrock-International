@@ -1,0 +1,134 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #111;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+.page { display: grid; place-items: center; min-height: 100vh; }
+
+.open-btn {
+  background: #fff; color: #000; border: 0; padding: 14px 36px;
+  font: 400 14px 'Montserrat', sans-serif; letter-spacing: .1em;
+  text-transform: uppercase; cursor: pointer;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, .75);
+  display: flex; align-items: center; justify-content: center;
+  padding: 30px 20px; overflow-y: auto;
+  opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s;
+  z-index: 100;
+}
+.overlay.is-open { opacity: 1; visibility: visible; }
+
+/* Modal */
+.modal {
+  width: 100%; max-width: 1140px; background: #fff; margin: auto;
+  transform: translateY(12px); transition: transform .25s;
+}
+.overlay.is-open .modal { transform: none; }
+
+.modal__hero {
+  position: relative; height: 171px;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.25)),
+    linear-gradient(110deg, #b9854a 0%, #d8d6d2 30%, #e9eef1 55%, #c98d4f 75%, #8a5a2b 100%);
+  /* Replace with: background: url('your-image.jpg') center/cover; */
+}
+
+.modal__close {
+  position: absolute; top: 40px; right: 46px; width: 42px; height: 42px;
+  border: 0; border-radius: 50%; background: rgba(210, 210, 210, .85);
+  display: grid; place-items: center; cursor: pointer; transition: background .2s;
+}
+.modal__close:hover { background: #fff; }
+
+.modal__body {
+  display: grid; grid-template-columns: 1fr 308px; gap: 25px;
+  padding: 24px 80px 0 64px; min-height: 357px;
+}
+
+/* Left */
+.modal__title {
+  font-size: 24px; font-weight: 300; letter-spacing: .06em;
+  text-transform: uppercase; line-height: 1.3; margin-top: 2px;
+}
+.modal__location {
+  font-size: 17px; font-weight: 500; letter-spacing: .05em; margin-top: 8px;
+}
+
+.tabs {
+  display: flex; gap: 33px; margin-top: 33px; padding-bottom: 12px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.tab {
+  background: none; border: 0; cursor: pointer; padding: 0;
+  font: 400 14px 'Montserrat', sans-serif; letter-spacing: .03em;
+  text-transform: uppercase; color: #bdbdbd; transition: color .2s;
+}
+.tab:hover { color: #666; }
+.tab.is-active { color: #000; }
+
+.tab-panel { display: none; }
+.tab-panel.is-active { display: block; }
+.panel-text { padding: 30px 16px; font-size: 14px; color: #555; }
+
+.experience {
+  display: flex; align-items: center; gap: 20px; position: relative;
+  padding: 32px 0 26px 16px; border-bottom: 1px solid #e8e8e8; cursor: pointer;
+}
+.experience__info { flex: 1; max-width: 585px; }
+.experience__desc {
+  font-size: 14px; line-height: 1.6; letter-spacing: .06em; margin-bottom: 20px;
+}
+.experience__desc strong, .experience__price strong { font-weight: 500; }
+.experience__price { font-size: 14px; letter-spacing: .06em; font-weight: 500; }
+
+.experience__radio { position: absolute; opacity: 0; }
+.experience__circle {
+  flex: none; width: 32px; height: 32px; border: 1px solid #1a1a1a;
+  border-radius: 50%; margin: -20px 14px 0 auto; position: relative;
+}
+.experience__radio:checked + .experience__circle::after {
+  content: ''; position: absolute; inset: 6px; background: #000; border-radius: 50%;
+}
+
+/* Right */
+.modal__side { padding-top: 0; }
+.booking {
+  border: 1px solid #ececec; padding: 15px 15px 16px; margin-top: 0;
+}
+.field {
+  display: block; width: 100%; height: 51px; margin-bottom: 8px; padding: 0 20px;
+  background: #f7f8f9; border: 0; border-radius: 0; outline: none;
+  font: 400 13px 'Montserrat', sans-serif; letter-spacing: .05em; color: #222;
+  appearance: none; -webkit-appearance: none;
+}
+select.field {
+  background-image: none; cursor: pointer;
+}
+.field:focus { box-shadow: inset 0 0 0 1px #000; }
+
+.book-btn {
+  display: block; width: 100%; height: 49px; margin-top: 0;
+  background: #000; color: #fff; border: 0; cursor: pointer;
+  font: 400 14px 'Montserrat', sans-serif; letter-spacing: .1em;
+  text-transform: uppercase; transition: background .2s;
+}
+.book-btn:hover { background: #333; }
+
+.side-note {
+  margin-top: 16px; font-size: 13.5px; line-height: 1.7; letter-spacing: .08em;
+  color: #333; max-width: 260px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .modal__body { grid-template-columns: 1fr; padding: 24px 24px 30px; }
+  .modal__close { top: 16px; right: 16px; }
+  .experience__circle { margin-top: 0; }
+}

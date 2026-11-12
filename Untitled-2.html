@@ -1,0 +1,1030 @@
+<title>Goldrock About Us</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Goldrock International corporate profile: a diverse portfolio across agriculture and commodities, hospitality, trade and manufacturing, and infrastructure and connectivity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout concept: editorial luxury x architectural drawing. Dark and ivory bands alternate;
+   every image slot carries a gold-line architectural plate until real Goldrock photography is supplied.
+   Brand palette is the brief's; the page commits to one look (dark/ivory bands), so no theme switch. */
+@property --sc { syntax: "<number>"; inherits: true; initial-value: 1.06; }
+@property --py { syntax: "<length>"; inherits: true; initial-value: 0px; }
+:root {
+  --ink: #1B1D1A;
+  --ink-2: #292C27;
+  --ivory: #F3F1EB;
+  --white: #FFFFFF;
+  --gold: #B99A61;
+  --gold-lt: #D7C49D;
+  --stone: #77776F;
+  --mute-light: #5C5C55;   /* secondary text on ivory, AA contrast */
+  --mute-dark: #A7A79D;    /* secondary text on charcoal */
+  --line-light: rgba(27,29,26,.18);
+  --line-dark: rgba(243,241,235,.18);
+  --serif: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --pad: clamp(16px, 5vw, 76px);
+  --section: clamp(4.5rem, 11vw, 9.5rem);
+  color-scheme: dark;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--ink); color: var(--ivory); font-family: var(--sans); font-weight: 400; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+.gr-about, .gr-about * { box-sizing: border-box; }
+.gr-about { overflow-x: clip; }
+.gr-about a { color: inherit; }
+.gr-about :focus-visible { outline: 2px solid var(--gold-lt); outline-offset: 4px; }
+.gr-wrap { padding-left: max(var(--pad), env(safe-area-inset-left, 0px)); padding-right: max(var(--pad), env(safe-area-inset-right, 0px)); max-width: 1680px; margin: 0 auto; }
+
+/* type */
+.gr-eyebrow { font: 600 .72rem/1.5 var(--sans); letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin: 0 0 1.6rem; }
+.gr-eyebrow i { font-style: normal; opacity: .6; margin: 0 .5em; }
+.gr-h2 { font: 400 clamp(2.4rem, 6.2vw, 5.6rem)/1.02 var(--serif); letter-spacing: -.02em; margin: 0; text-wrap: balance; font-variation-settings: "opsz" 96; }
+.gr-h2 em { font-style: italic; color: var(--gold); }
+.gr-lede { font-size: clamp(1.05rem, 1.5vw, 1.25rem); line-height: 1.7; max-width: 38rem; }
+.gr-body { font-size: 1rem; max-width: 36rem; }
+.gr-light { background: var(--ivory); color: var(--ink); }
+.gr-light .gr-eyebrow { color: #8C7235; }
+.gr-light .gr-h2 em { color: #8C7235; }
+.gr-dark { background: var(--ink); color: var(--ivory); }
+.gr-dark2 { background: var(--ink-2); color: var(--ivory); }
+.gr-sec { padding-block: var(--section); position: relative; }
+.gr-mute { color: var(--mute-light); }
+.gr-dark .gr-mute, .gr-dark2 .gr-mute { color: var(--mute-dark); }
+.gr-ph { color: var(--mute-light); border-left: 1px solid #8C7235; padding-left: 1rem; font-size: .92rem; }
+.gr-dark .gr-ph, .gr-dark2 .gr-ph { color: var(--mute-dark); border-color: var(--gold); }
+
+/* image plates (art direction placeholders, swap with photos via data-src) */
+.gr-photo { position: relative; margin: 0; overflow: hidden; background: var(--ink-2); isolation: isolate; }
+.gr-photo__art { position: absolute; inset: 0; transform: translate3d(0, var(--py), 0) scale(var(--sc)); transition: --sc 1.6s cubic-bezier(.2,.7,.2,1); background:
+  radial-gradient(70% 60% at 72% 28%, rgba(185,154,97,.20), transparent 70%), var(--ink-2); }
+.gr-photo[data-parallax] .gr-photo__art { inset: -9% 0; }
+.gr-photo.is-in .gr-photo__art { --sc: 1; }
+.gr-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.gr-art { width: 100%; height: 100%; display: block; }
+.gr-art .ln { fill: none; stroke: var(--gold); stroke-opacity: .55; stroke-width: 1.1; vector-effect: non-scaling-stroke; }
+.gr-art .ln2 { fill: none; stroke: var(--gold-lt); stroke-opacity: .28; stroke-width: 1; vector-effect: non-scaling-stroke; }
+.gr-art .fl { fill: var(--ink); stroke: var(--gold); stroke-opacity: .5; stroke-width: 1.1; vector-effect: non-scaling-stroke; }
+.gr-art .fl2 { fill: #222520; stroke: var(--gold); stroke-opacity: .42; stroke-width: 1.1; vector-effect: non-scaling-stroke; }
+.gr-art .dot { fill: var(--gold); fill-opacity: .8; }
+.gr-tag { position: absolute; left: 1rem; bottom: .9rem; z-index: 2; font: 600 .62rem/1.3 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--gold-lt); opacity: .75; }
+.gr-photo.has-src .gr-tag, .gr-hero .gr-tag { display: none; }
+
+/* motion */
+.gr-rv { transition: transform 1s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0s); }
+html.gr-js .gr-rv:not(.is-in) { transform: translateY(34px); }
+
+/* progress + rail */
+.gr-progress { position: fixed; left: 0; right: 0; top: env(safe-area-inset-top, 0px); height: 2px; z-index: 30; background: transparent; pointer-events: none; }
+.gr-progress b { display: block; height: 100%; width: 100%; background: var(--gold); transform: scaleX(0); transform-origin: 0 50%; }
+.gr-rail { position: fixed; right: max(1.2rem, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); z-index: 25; display: none; flex-direction: column; gap: .15rem; padding: .7rem .6rem; background: rgba(27,29,26,.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid var(--line-dark); }
+.gr-rail a { display: flex; align-items: center; justify-content: flex-end; gap: .7rem; text-decoration: none; font: 600 .62rem/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--mute-dark); padding: .5rem .2rem; }
+.gr-rail a span { display: inline-block; max-width: 0; overflow: hidden; white-space: nowrap; opacity: 0; transition: max-width .5s, opacity .4s; }
+.gr-rail a::after { content: attr(data-n); font-variant-numeric: tabular-nums; color: var(--mute-dark); transition: color .3s; }
+.gr-rail a.is-on { color: var(--gold-lt); }
+.gr-rail a.is-on::after { color: var(--gold); }
+.gr-rail a.is-on span, .gr-rail a:hover span, .gr-rail a:focus-visible span { max-width: 14rem; opacity: 1; }
+@media (min-width: 1100px) { .gr-rail { display: flex; } }
+
+/* 01 hero */
+.gr-hero { position: relative; min-height: clamp(36rem, 92svh, 58rem); display: flex; align-items: flex-end; background: var(--ink); overflow: hidden; }
+.gr-hero .gr-photo { position: absolute; inset: 0; z-index: 0; }
+.gr-hero__veil { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(27,29,26,.55) 0%, rgba(27,29,26,.2) 38%, rgba(27,29,26,.88) 100%), linear-gradient(90deg, rgba(27,29,26,.7), transparent 70%); }
+.gr-hero__inner { position: relative; z-index: 2; width: 100%; padding-block: clamp(7rem, 16vw, 11rem) clamp(2.5rem, 5vw, 4rem); display: grid; gap: 2rem; }
+.gr-hero h1 { font: 400 clamp(2.9rem, 8.3vw, 8.2rem)/.96 var(--serif); letter-spacing: -.03em; margin: 0 0 .2em; max-width: none; text-wrap: balance; font-variation-settings: "opsz" 96; }
+.gr-hero h1 em { font-style: italic; color: var(--gold-lt); }
+.gr-hero__foot { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 2rem; border-top: 1px solid var(--line-dark); padding-top: 1.6rem; }
+.gr-hero__foot p { margin: 0; max-width: 34rem; color: var(--ivory); font-size: clamp(1rem, 1.4vw, 1.2rem); }
+.gr-scroll { display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; font: 600 .68rem/1 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold-lt); }
+.gr-scroll i { position: relative; width: 1px; height: 3.6rem; background: var(--line-dark); overflow: hidden; display: block; }
+.gr-scroll i::after { content: ""; position: absolute; left: 0; top: -40%; width: 1px; height: 40%; background: var(--gold); animation: gr-drop 2.4s cubic-bezier(.6,0,.3,1) infinite; }
+@keyframes gr-drop { to { top: 110%; } }
+
+/* 02 story */
+.gr-story { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(1rem, 3vw, 3rem); row-gap: 3rem; align-items: start; }
+.gr-story__text { grid-column: 1 / span 5; }
+.gr-story__fig { grid-column: 7 / span 6; margin: clamp(0rem, 6vw, 6rem) 0 0; position: sticky; top: 5rem; }
+.gr-story__fig .gr-photo { aspect-ratio: 4 / 5; }
+.gr-story__fig figcaption { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line-light); margin-top: 1rem; padding-top: .8rem; font-size: .78rem; letter-spacing: .06em; color: var(--mute-light); }
+.gr-story .gr-h2 { margin-bottom: 2.2rem; }
+.gr-story p { margin: 0 0 1.3rem; }
+.gr-miles { list-style: none; margin: 2.6rem 0 0; padding: 0; border-top: 1px solid var(--line-light); }
+.gr-miles li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; align-items: baseline; padding: 1rem 0; border-bottom: 1px solid var(--line-light); }
+.gr-miles b { font: 400 2rem/1 var(--serif); color: #8C7235; font-variant-numeric: lining-nums tabular-nums; }
+.gr-miles span { font-size: .95rem; }
+.gr-miles small { display: block; font: 600 .62rem/1.4 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--mute-light); margin-top: .25rem; }
+
+/* 03 portfolio */
+.gr-port__head { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(1rem, 3vw, 3rem); margin-bottom: clamp(3rem, 7vw, 6rem); align-items: end; }
+.gr-port__head > div:first-child { grid-column: 1 / span 8; }
+.gr-port__head > p { grid-column: 10 / span 3; margin: 0; font-size: .9rem; }
+.gr-divs { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(1rem, 3vw, 3rem); row-gap: clamp(3.5rem, 7vw, 7rem); }
+.gr-div { position: relative; }
+.gr-div .gr-photo { aspect-ratio: 5 / 4; }
+.gr-div--1 { grid-column: 1 / span 7; }
+.gr-div--2 { grid-column: 9 / span 4; margin-top: clamp(0rem, 14vw, 13rem); }
+.gr-div--3 { grid-column: 2 / span 4; }
+.gr-div--4 { grid-column: 7 / span 6; margin-top: clamp(0rem, 9vw, 8rem); }
+.gr-div__no { position: absolute; z-index: 3; top: -.38em; right: -.04em; font: 400 clamp(5rem, 13vw, 12rem)/1 var(--serif); color: transparent; -webkit-text-stroke: 1px var(--gold); letter-spacing: -.04em; pointer-events: none; font-variant-numeric: lining-nums; }
+.gr-div--2 .gr-div__no, .gr-div--3 .gr-div__no { right: auto; left: -.04em; }
+.gr-div__body { padding-top: 1.6rem; display: grid; gap: .9rem; }
+.gr-div__body .gr-eyebrow { margin: 0; }
+.gr-div h3 { font: 400 clamp(1.8rem, 3.4vw, 3rem)/1.05 var(--serif); letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+.gr-div__body p { margin: 0; color: var(--mute-dark); max-width: 32rem; }
+.gr-acts { list-style: none; padding: 1rem 0 0; margin: .4rem 0 0; border-top: 1px solid var(--line-dark); display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ivory); }
+.gr-acts li::before { content: ""; display: inline-block; width: .45rem; height: 1px; background: var(--gold); vertical-align: middle; margin-right: .6rem; }
+.gr-div .gr-photo__art { transition: --sc 1.6s cubic-bezier(.2,.7,.2,1); }
+.gr-div:hover .gr-photo.is-in { --sc: 1.05; }
+.gr-div:hover .gr-photo.is-in .gr-photo__art { --sc: 1.05; transition-duration: 1.1s; }
+.gr-note { margin: clamp(3rem, 6vw, 5rem) 0 0; font-size: .78rem; color: var(--mute-dark); border-top: 1px solid var(--line-dark); padding-top: 1rem; max-width: 46rem; }
+
+/* 04 approach */
+.gr-appr .gr-h2 { max-width: 15ch; margin-bottom: clamp(3rem, 7vw, 6.5rem); }
+.gr-cols { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: clamp(1.2rem, 3vw, 3rem); row-gap: 3rem; }
+.gr-col { border-top: 1px solid var(--ink); padding-top: 1.4rem; }
+.gr-col b { display: block; font: 400 clamp(3.2rem, 6vw, 5.4rem)/1 var(--serif); color: #8C7235; letter-spacing: -.03em; margin-bottom: 2.2rem; font-variant-numeric: lining-nums; }
+.gr-col h3 { font: 700 .74rem/1.4 var(--sans); letter-spacing: .22em; text-transform: uppercase; margin: 0 0 .8rem; }
+.gr-col p { margin: 0; color: var(--mute-light); font-size: .98rem; max-width: 18rem; }
+
+/* 05 capabilities */
+.gr-cap { display: grid; grid-template-columns: 55fr 45fr; background: var(--ink-2); color: var(--ivory); }
+.gr-cap .gr-photo { min-height: 100%; }
+.gr-cap__panel { padding: clamp(3rem, 7vw, 7rem) var(--pad) clamp(3rem, 7vw, 7rem) clamp(1.6rem, 5vw, 5.5rem); padding-right: max(var(--pad), env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; justify-content: center; gap: 2.4rem; min-width: 0; }
+.gr-cap__panel .gr-h2 { font-size: clamp(2.2rem, 4.6vw, 4.4rem); }
+.gr-stmts { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-dark); }
+.gr-stmts li { display: grid; grid-template-columns: 10rem 1fr; gap: 1.2rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line-dark); }
+.gr-stmts h3 { margin: 0; font: 700 .68rem/1.5 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.gr-stmts p { margin: 0; color: var(--ivory); font-size: .98rem; }
+
+/* 06 leadership */
+.gr-lead__head { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(1rem, 3vw, 3rem); margin-bottom: clamp(3rem, 6vw, 5.5rem); }
+.gr-lead__head > div { grid-column: 1 / span 8; }
+.gr-lead__grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: clamp(1rem, 3vw, 3rem); row-gap: 3.5rem; align-items: start; }
+.gr-person { min-width: 0; }
+.gr-person--a { grid-column: 1 / span 6; grid-row: 1 / span 2; }
+.gr-person--b { grid-column: 8 / span 5; grid-row: 1; }
+.gr-person--c { grid-column: 8 / span 5; grid-row: 2; }
+.gr-person--b, .gr-person--c { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); column-gap: 1.6rem; align-content: start; align-items: start; }
+.gr-person--b .gr-portrait, .gr-person--c .gr-portrait { grid-row: 1 / span 3; margin-bottom: 0; }
+.gr-portrait { position: relative; aspect-ratio: 4 / 5; background: #E8E4D9; border: 1px solid var(--line-light); display: grid; place-items: center; margin-bottom: 1.4rem; }
+.gr-portrait svg { width: 38%; height: auto; }
+.gr-portrait svg * { fill: none; stroke: #8C7235; stroke-opacity: .6; stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.gr-portrait::before, .gr-portrait::after { content: ""; position: absolute; width: 1.4rem; height: 1.4rem; border: 1px solid #8C7235; }
+.gr-portrait::before { left: .9rem; top: .9rem; border-right: 0; border-bottom: 0; }
+.gr-portrait::after { right: .9rem; bottom: .9rem; border-left: 0; border-top: 0; }
+.gr-portrait span { position: absolute; left: 1.2rem; bottom: 1rem; font: 600 .62rem/1.3 var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--mute-light); }
+.gr-person h3 { font: 400 clamp(1.6rem, 2.6vw, 2.4rem)/1.1 var(--serif); margin: 0 0 .3rem; }
+.gr-person .gr-role { font: 600 .7rem/1.4 var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #8C7235; margin: 0 0 1rem; }
+.gr-person p.gr-mute { margin: 0; font-size: .95rem; max-width: 28rem; border-top: 1px solid var(--line-light); padding-top: 1rem; }
+
+/* 07 closing */
+.gr-close { position: relative; min-height: clamp(34rem, 90svh, 56rem); display: flex; align-items: flex-end; overflow: hidden; background: var(--ink); }
+.gr-close .gr-photo { position: absolute; inset: 0; }
+.gr-close .gr-hero__veil { background: linear-gradient(180deg, rgba(27,29,26,.7), rgba(27,29,26,.45) 45%, rgba(27,29,26,.92)); }
+.gr-close__inner { position: relative; z-index: 2; width: 100%; padding-block: clamp(6rem, 12vw, 10rem) clamp(3rem, 6vw, 5rem); display: grid; gap: 2.2rem; }
+.gr-close h2 { font: 400 clamp(3rem, 9.4vw, 8.6rem)/.95 var(--serif); letter-spacing: -.03em; margin: 0; max-width: 12ch; text-wrap: balance; font-variation-settings: "opsz" 96; }
+.gr-close h2 em { font-style: italic; color: var(--gold-lt); }
+.gr-close p { margin: 0; max-width: 40rem; font-size: clamp(1rem, 1.4vw, 1.2rem); }
+.gr-cta { justify-self: start; display: inline-flex; align-items: center; gap: 1.2rem; padding: 1.2rem 1.9rem; background: var(--gold); color: var(--ink); text-decoration: none; font: 700 .74rem/1 var(--sans); letter-spacing: .22em; text-transform: uppercase; border: 1px solid var(--gold); transition: background .4s, color .4s; }
+.gr-cta svg { width: 1.6rem; height: .7rem; transition: transform .4s; }
+.gr-cta svg * { stroke: currentColor; fill: none; stroke-width: 1.4; }
+.gr-cta:hover { background: transparent; color: var(--gold-lt); }
+.gr-cta:hover svg { transform: translateX(.4rem); }
+
+/* tablet */
+@media (max-width: 1000px) {
+  .gr-story__text, .gr-story__fig { grid-column: 1 / -1; }
+  .gr-story__fig { margin: 0; position: static; }
+  .gr-story__fig .gr-photo { aspect-ratio: 5 / 4; }
+  .gr-port__head > div:first-child { grid-column: 1 / -1; }
+  .gr-port__head > p { grid-column: 1 / span 8; margin-top: 1.6rem; }
+  .gr-div--1, .gr-div--2, .gr-div--3, .gr-div--4 { grid-column: 1 / -1; margin-top: 0; }
+  .gr-div--2, .gr-div--4 { padding-left: 14%; }
+  .gr-div--3 { padding-right: 14%; }
+  .gr-cols { grid-template-columns: repeat(2, 1fr); }
+  .gr-cap { grid-template-columns: 1fr; }
+  .gr-cap .gr-photo { aspect-ratio: 16 / 10; min-height: 0; }
+  .gr-lead__head > div { grid-column: 1 / -1; }
+  .gr-person--a, .gr-person--b, .gr-person--c { grid-column: 1 / -1; grid-row: auto; }
+  .gr-person--b, .gr-person--c { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); }
+  .gr-person--a .gr-portrait { aspect-ratio: 16 / 10; }
+}
+/* mobile: recomposed, not shrunk */
+@media (max-width: 600px) {
+  .gr-hero { min-height: 34rem; }
+  .gr-hero__foot { flex-direction: column; align-items: flex-start; }
+  .gr-miles li { grid-template-columns: 4.2rem 1fr; }
+  .gr-port__head > p { grid-column: 1 / -1; }
+  .gr-div--2, .gr-div--3, .gr-div--4 { padding: 0; }
+  .gr-div__no { font-size: 5.4rem; top: -.32em; }
+  .gr-cols { grid-template-columns: 1fr; row-gap: 2.4rem; }
+  .gr-col b { margin-bottom: 1.2rem; }
+  .gr-col p { max-width: none; }
+  .gr-stmts li { grid-template-columns: 1fr; gap: .4rem; }
+  .gr-person--b, .gr-person--c { display: block; }
+  .gr-person--b .gr-portrait, .gr-person--c .gr-portrait { margin-bottom: 1.4rem; }
+  .gr-person--a .gr-portrait { aspect-ratio: 4 / 5; }
+  .gr-cta { width: 100%; justify-content: space-between; }
+  .gr-story__fig figcaption { flex-direction: column; gap: .2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .gr-rv, html.gr-js .gr-rv:not(.is-in) { transform: none; transition: none; }
+  .gr-photo__art { transition: none; --sc: 1; transform: none; }
+  .gr-scroll i::after { animation: none; top: 0; }
+  .gr-rail a span { transition: none; }
+}
+
+/* ============================================
+   GOLDROCK — TRANSPARENT LIGHT THEME OVERRIDE
+   Append at the END of the existing stylesheet
+   ============================================ */
+
+:root {
+  color-scheme: light;
+
+  --ink: #292820;
+  --ink-2: #EAE6DC;
+  --ivory: transparent;
+  --white: #FFFFFF;
+
+  --gold: #A88950;
+  --gold-lt: #C5AC78;
+
+  --stone: #77766E;
+  --mute-light: rgba(41, 40, 32, .68);
+  --mute-dark: rgba(41, 40, 32, .68);
+
+  --line-light: rgba(41, 40, 32, .16);
+  --line-dark: rgba(41, 40, 32, .16);
+}
+
+/* GLOBAL TRANSPARENCY */
+
+html,
+body,
+.gr-page {
+  background: transparent !important;
+  color: var(--ink);
+}
+
+/* MAIN SECTIONS */
+
+.gr-light,
+.gr-dark,
+.gr-dark2,
+.gr-approach,
+.gr-cap,
+.gr-leadership,
+.gr-close {
+  background-color: transparent !important;
+  color: var(--ink);
+}
+
+/* TYPOGRAPHY */
+
+.gr-light p,
+.gr-dark p,
+.gr-dark2 p,
+.gr-div__body p,
+.gr-cap__statement,
+.gr-approach__body,
+.gr-close p {
+  color: var(--mute-dark);
+}
+
+.gr-light h1,
+.gr-light h2,
+.gr-light h3,
+.gr-dark h1,
+.gr-dark h2,
+.gr-dark h3,
+.gr-dark2 h1,
+.gr-dark2 h2,
+.gr-dark2 h3,
+.gr-close h2 {
+  color: var(--ink);
+}
+
+/* HERO */
+
+/* =========================================
+   GOLDROCK CINEMATIC VIDEO HERO
+========================================= */
+
+.gr-hero {
+  position: relative;
+  min-height: 100svh;
+  height: 850px;
+  max-height: 1000px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  isolation: isolate;
+  background: #111;
+}
+
+/* VIDEO BACKGROUND */
+
+.gr-hero__video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.gr-hero__video video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* DARK CINEMATIC OVERLAY */
+
+.gr-hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 12, 10, .82) 0%,
+      rgba(8, 12, 10, .52) 48%,
+      rgba(8, 12, 10, .12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(8, 12, 10, .72) 0%,
+      transparent 65%
+    );
+}
+
+/* CONTENT */
+
+.gr-hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: 180px;
+  padding-bottom: 90px;
+  color: #fff;
+}
+
+.gr-hero .gr-eyebrow {
+  color: rgba(255,255,255,.72);
+  margin-bottom: 30px;
+}
+
+.gr-hero .gr-eyebrow i {
+  color: var(--gold);
+  margin: 0 12px;
+  font-style: normal;
+}
+
+.gr-hero h1 {
+  max-width: 1000px;
+  color: #fff;
+  font-size: clamp(3.8rem, 8vw, 8.5rem);
+  line-height: .94;
+  letter-spacing: -.075em;
+  font-weight: 500;
+  margin: 0;
+}
+
+.gr-hero h1 em {
+  color: var(--gold-lt);
+  font-family: Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.065em;
+}
+
+/* BOTTOM CONTENT */
+
+.gr-hero__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-top: 65px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,.25);
+}
+
+.gr-hero__foot p {
+  max-width: 430px;
+  color: rgba(255,255,255,.78);
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* SCROLL LINK */
+
+.gr-hero .gr-scroll {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
+
+.gr-hero .gr-scroll i {
+  display: block;
+  width: 45px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .gr-hero {
+    min-height: 760px;
+    height: 90svh;
+    max-height: 900px;
+  }
+
+  .gr-hero__inner {
+    padding-top: 140px;
+    padding-bottom: 55px;
+  }
+
+  .gr-hero h1 {
+    font-size: clamp(3.3rem, 13vw, 6rem);
+  }
+
+  .gr-hero__foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 45px;
+  }
+
+  .gr-hero__veil {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(8, 12, 10, .88) 0%,
+        rgba(8, 12, 10, .35) 75%,
+        rgba(8, 12, 10, .25) 100%
+      );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gr-hero__video video {
+    display: none;
+  }
+}
+/* IMAGE PLATES */
+
+.gr-photo,
+.gr-photo__art,
+.gr-photo__frame {
+  background-color: transparent !important;
+}
+
+/* BUSINESS DIVISIONS */
+
+.gr-div,
+.gr-div__body,
+.gr-div__media {
+  background-color: transparent !important;
+}
+
+.gr-div {
+  border-color: var(--line-light);
+}
+
+.gr-div__number,
+.gr-div__eyebrow {
+  color: var(--gold);
+}
+
+.gr-div__body h3 {
+  color: var(--ink);
+}
+
+.gr-div__body p {
+  color: var(--mute-dark);
+}
+
+/* APPROACH */
+
+.gr-approach__item,
+.gr-cap__item,
+.gr-leader {
+  background-color: transparent !important;
+  border-color: var(--line-light);
+}
+
+/* CAPABILITIES */
+
+.gr-cap__content,
+.gr-cap__visual {
+  background-color: transparent !important;
+}
+
+.gr-cap__statement {
+  color: var(--ink);
+}
+
+.gr-cap__statement em {
+  color: var(--gold);
+}
+
+/* LEADERSHIP */
+
+.gr-leader__info {
+  background-color: transparent !important;
+  color: var(--ink);
+}
+
+/* CLOSING CTA */
+
+.gr-close__veil {
+  background: linear-gradient(
+    90deg,
+    rgba(250, 249, 246, .88),
+    rgba(250, 249, 246, .45)
+  ) !important;
+}
+
+.gr-close h2,
+.gr-close p {
+  color: var(--ink);
+}
+
+/* BUTTONS */
+
+.gr-btn,
+.gr-cta {
+  background: var(--gold) !important;
+  color: #fff !important;
+  border-color: var(--gold) !important;
+}
+
+.gr-btn:hover,
+.gr-cta:hover {
+  background: transparent !important;
+  color: var(--gold) !important;
+}
+
+/* NAVIGATION */
+
+.gr-rail {
+  background: rgba(250, 249, 246, .35) !important;
+  border-color: var(--line-light);
+  backdrop-filter: blur(12px);
+}
+
+.gr-rail a,
+.gr-rail span {
+  color: var(--ink);
+}
+
+/* DIVIDERS */
+
+.gr-divider,
+.gr-rule,
+.gr-section-line {
+  border-color: var(--line-light) !important;
+}
+
+/* DECORATIVE DETAILS */
+
+.gr-hero__foot,
+.gr-scroll,
+.gr-scroll span {
+  color: var(--gold);
+}
+
+.gr-hero__foot {
+  border-color: var(--line-light);
+}
+</style>
+
+<div class="gr-progress" aria-hidden="true"><b></b></div>
+
+<nav class="gr-rail" aria-label="Page sections">
+  <a href="#top" data-n="01"><span>Corporate profile</span></a>
+  <a href="#story" data-n="02"><span>Our story</span></a>
+  <a href="#portfolio" data-n="03"><span>Business portfolio</span></a>
+  <a href="#approach" data-n="04"><span>Our approach</span></a>
+  <a href="#capabilities" data-n="05"><span>Capabilities</span></a>
+  <a href="#leadership" data-n="06"><span>Leadership</span></a>
+  <a href="#ahead" data-n="07"><span>Looking ahead</span></a>
+</nav>
+
+<main class="gr-about">
+
+  <!-- 01 / HERO -->
+ <section class="gr-hero" id="top" aria-labelledby="gr-h-hero" data-sec>
+
+  <!-- BACKGROUND VIDEO -->
+  <div class="gr-hero__video">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      poster="WhatsApp Image 2026-11-04 at 08.35.20 (2).jpeg"
+      aria-hidden="true"
+    >
+      <source src="WhatsApp Video 2026-11-04 at 08.35.22.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- DARK OVERLAY -->
+  <div class="gr-hero__veil"></div>
+
+  <!-- HERO CONTENT -->
+  <div class="gr-wrap gr-hero__inner">
+
+    <p class="gr-eyebrow gr-rv">
+      Goldrock International<i>/</i>Corporate Profile
+    </p>
+
+    <h1 id="gr-h-hero" class="gr-rv" style="--d:.08s">
+      A diverse portfolio.<br>
+      <em>One vision.</em>
+    </h1>
+
+    <div class="gr-hero__foot gr-rv" style="--d:.16s">
+
+      <p>
+        An enterprise connecting industries, opportunities and people
+        through a diverse portfolio of business interests.
+      </p>
+
+      <a class="gr-scroll" href="#story"
+         aria-label="Scroll to section 02, Our story">
+        <span>02 / Our story</span>
+        <i aria-hidden="true"></i>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+  <!-- 02 / OUR STORY -->
+  <section class="gr-sec gr-light" id="story" aria-labelledby="gr-h-story" data-sec>
+    <div class="gr-wrap">
+      <div class="gr-story">
+        <div class="gr-story__text">
+          <p class="gr-eyebrow gr-rv">02 <i>/</i> Our story</p>
+          <h2 class="gr-h2 gr-rv" id="gr-h-story">Built on ambition.<br><em>Driven by enterprise.</em></h2>
+          <p class="gr-lede gr-rv">Goldrock International is a diversified enterprise with business interests across agriculture and commodities, hospitality, trade and manufacturing, and infrastructure and connectivity.</p>
+          <p class="gr-ph gr-rv">[Origins: Goldrock's founding story and early years, to be supplied and verified by Goldrock.]</p>
+          <p class="gr-body gr-rv">Each business is run for its own market, and the portfolio is built around one idea: industries that share partners, products and standards can strengthen one another. [Commercial philosophy: wording to be confirmed with Goldrock leadership.]</p>
+          <p class="gr-ph gr-rv">[Business evolution and long-term direction: verified narrative to be supplied.]</p>
+          <ul class="gr-miles gr-rv" aria-label="Milestones pending verification">
+            <li><b>1991</b><span>Establishment<small>Pending verification</small></span></li>
+            <li><b>1996</b><span>Duty-free retail at JKIA<small>Pending verification</small></span></li>
+            <li><b>1999</b><span>Coffee production begins<small>Pending verification</small></span></li>
+          </ul>
+        </div>
+        <figure class="gr-story__fig gr-rv" style="--d:.1s">
+          <div class="gr-photo" data-art="story" data-alt="Placeholder drawing of a production hall elevation. Replace with an operational Goldrock photograph.">
+            <span class="gr-tag">Image slot 02 · Operational photography to be supplied</span>
+          </div>
+          <figcaption><span>Production hall, elevation study</span><span>[Caption to be supplied]</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / BUSINESS PORTFOLIO -->
+  <section class="gr-sec gr-dark" id="portfolio" aria-labelledby="gr-h-port" data-sec>
+    <div class="gr-wrap">
+      <div class="gr-port__head">
+        <div>
+          <p class="gr-eyebrow gr-rv">03 <i>/</i> Our business portfolio</p>
+          <h2 class="gr-h2 gr-rv" id="gr-h-port">Different industries.<br><em>A connected vision.</em></h2>
+        </div>
+        <p class="gr-mute gr-rv">Four proposed divisions, grouped by what the businesses do and who they serve.</p>
+      </div>
+
+      <div class="gr-divs">
+        <article class="gr-div gr-div--1 gr-rv">
+          <span class="gr-div__no" aria-hidden="true">01</span>
+          <div class="gr-photo" data-art="agri" data-alt="Placeholder drawing of terraced coffee-growing hills. Replace with a photograph of Goldrock agriculture.">
+            <span class="gr-tag">Image slot 03a · Plantations, tea, processing</span>
+          </div>
+          <div class="gr-div__body">
+            <p class="gr-eyebrow">Division 01</p>
+            <h3>Agriculture &amp; Commodities</h3>
+            <p>Masai Coffee, Masai Tea and Kili Natural bring together agricultural production, processing and natural commodities.</p>
+            <ul class="gr-acts"><li>Masai Coffee</li><li>Masai Tea</li><li>Kili Natural</li></ul>
+          </div>
+        </article>
+
+        <article class="gr-div gr-div--2 gr-rv" style="--d:.1s">
+          <span class="gr-div__no" aria-hidden="true">02</span>
+          <div class="gr-photo" data-art="hosp" data-alt="Placeholder drawing of an arched café colonnade. Replace with a photograph of a Goldrock café or experience.">
+            <span class="gr-tag">Image slot 03b · Cafés and experiences</span>
+          </div>
+          <div class="gr-div__body">
+            <p class="gr-eyebrow">Division 02</p>
+            <h3>Hospitality &amp; Experiences</h3>
+            <p>Coffee tours, cafés and restaurants that bring visitors closer to the products behind the brands.</p>
+            <ul class="gr-acts"><li>Masai Coffee Tours</li><li>Cafés</li><li>Restaurants</li><li>Hospitality experiences</li></ul>
+          </div>
+        </article>
+
+        <article class="gr-div gr-div--3 gr-rv">
+          <span class="gr-div__no" aria-hidden="true">03</span>
+          <div class="gr-photo" data-art="manu" data-alt="Placeholder drawing of a sawtooth-roofed factory elevation. Replace with a photograph of Goldrock manufacturing or distribution.">
+            <span class="gr-tag">Image slot 03c · Production and logistics</span>
+          </div>
+          <div class="gr-div__body">
+            <p class="gr-eyebrow">Division 03</p>
+            <h3>Trade &amp; Manufacturing</h3>
+            <p>Manufacturing, duty-free retail and commercial distribution, with product development where applicable.</p>
+            <ul class="gr-acts"><li>Manufacturing</li><li>Duty-free retail</li><li>Commercial distribution</li><li>Product development</li></ul>
+          </div>
+        </article>
+
+        <article class="gr-div gr-div--4 gr-rv" style="--d:.1s">
+          <span class="gr-div__no" aria-hidden="true">04</span>
+          <div class="gr-photo" data-art="infra" data-alt="Placeholder drawing of a lattice telecommunications tower. Replace with a photograph of Goldrock infrastructure.">
+            <span class="gr-tag">Image slot 03d · Network infrastructure</span>
+          </div>
+          <div class="gr-div__body">
+            <p class="gr-eyebrow">Division 04</p>
+            <h3>Infrastructure &amp; Connectivity</h3>
+            <p>Telecommunications and connectivity-related business interests.</p>
+            <ul class="gr-acts"><li>Telecommunications</li><li>Connectivity</li></ul>
+          </div>
+        </article>
+      </div>
+      <p class="gr-note gr-rv">These divisions are proposed groupings for presentation. They are not official subsidiaries or legal entities.</p>
+    </div>
+  </section>
+
+  <!-- 04 / OUR APPROACH -->
+  <section class="gr-sec gr-light gr-appr" id="approach" aria-labelledby="gr-h-appr" data-sec>
+    <div class="gr-wrap">
+      <p class="gr-eyebrow gr-rv">04 <i>/</i> Our approach</p>
+      <h2 class="gr-h2 gr-rv" id="gr-h-appr">A considered approach to <em>creating value.</em></h2>
+      <div class="gr-cols">
+        <div class="gr-col gr-rv"><b>01</b><h3>Diversification</h3><p>Exploring opportunities across different industries and commercial markets.</p></div>
+        <div class="gr-col gr-rv" style="--d:.07s"><b>02</b><h3>Integration</h3><p>Identifying meaningful connections between products, services and markets.</p></div>
+        <div class="gr-col gr-rv" style="--d:.14s"><b>03</b><h3>Partnerships</h3><p>Building productive relationships with customers, suppliers and business partners.</p></div>
+        <div class="gr-col gr-rv" style="--d:.21s"><b>04</b><h3>Growth</h3><p>Pursuing opportunities with a focus on responsible, long-term development.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 / OUR CAPABILITIES -->
+  <section class="gr-cap" id="capabilities" aria-labelledby="gr-h-cap" data-sec>
+    <div class="gr-photo" data-art="plan" data-parallax data-alt="Placeholder site-plan drawing of an industrial campus. Replace with a photograph of a Goldrock facility.">
+      <span class="gr-tag">Image slot 05 · Facility photography to be supplied</span>
+    </div>
+    <div class="gr-cap__panel">
+      <div class="gr-rv">
+        <p class="gr-eyebrow">05 <i>/</i> Our capabilities</p>
+        <h2 class="gr-h2" id="gr-h-cap">From opportunity <em>to execution.</em></h2>
+      </div>
+      <ul class="gr-stmts gr-rv" style="--d:.08s">
+        <li><h3>Products &amp; commodities</h3><p>Coffee, tea and natural products under the Masai Coffee, Masai Tea and Kili Natural names.</p></li>
+        <li><h3>Hospitality &amp; experiences</h3><p>Cafés, restaurants and coffee tours designed around the visitor.</p></li>
+        <li><h3>Trade &amp; manufacturing</h3><p>Manufacturing, commercial distribution and duty-free retail working side by side.</p></li>
+        <li><h3>Infrastructure &amp; connectivity</h3><p>Telecommunications and connectivity-related business interests.</p></li>
+      </ul>
+      <p class="gr-ph gr-rv">[Verified capability details and facility photography to be supplied by Goldrock.]</p>
+    </div>
+  </section>
+
+  <!-- 06 / LEADERSHIP -->
+  <section class="gr-sec gr-light" id="leadership" aria-labelledby="gr-h-lead" data-sec>
+    <div class="gr-wrap">
+      <div class="gr-lead__head">
+        <div>
+          <p class="gr-eyebrow gr-rv">06 <i>/</i> Leadership</p>
+          <h2 class="gr-h2 gr-rv" id="gr-h-lead">The people behind <em>the vision.</em></h2>
+        </div>
+      </div>
+      <div class="gr-lead__grid">
+        <article class="gr-person gr-person--a gr-rv">
+          <div class="gr-portrait" role="img" aria-label="Portrait placeholder">
+            <svg viewBox="0 0 100 120" aria-hidden="true"><circle cx="50" cy="38" r="20"/><path d="M12 116c2-26 18-40 38-40s36 14 38 40"/></svg>
+            <span>Portrait to be supplied</span>
+          </div>
+          <h3>[Full name]</h3>
+          <p class="gr-role">[Official position]</p>
+          <p class="gr-mute">[Short professional biography. Verified text to be supplied by Goldrock.]</p>
+        </article>
+        <article class="gr-person gr-person--b gr-rv" style="--d:.08s">
+          <div class="gr-portrait" role="img" aria-label="Portrait placeholder">
+            <svg viewBox="0 0 100 120" aria-hidden="true"><circle cx="50" cy="38" r="20"/><path d="M12 116c2-26 18-40 38-40s36 14 38 40"/></svg>
+            <span>Portrait to be supplied</span>
+          </div>
+          <h3>[Full name]</h3>
+          <p class="gr-role">[Official position]</p>
+          <p class="gr-mute">[Short professional biography. Verified text to be supplied by Goldrock.]</p>
+        </article>
+        <article class="gr-person gr-person--c gr-rv" style="--d:.16s">
+          <div class="gr-portrait" role="img" aria-label="Portrait placeholder">
+            <svg viewBox="0 0 100 120" aria-hidden="true"><circle cx="50" cy="38" r="20"/><path d="M12 116c2-26 18-40 38-40s36 14 38 40"/></svg>
+            <span>Portrait to be supplied</span>
+          </div>
+          <h3>[Full name]</h3>
+          <p class="gr-role">[Official position]</p>
+          <p class="gr-mute">[Short professional biography. Verified text to be supplied by Goldrock.]</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 / LOOKING AHEAD -->
+  <section class="gr-close" id="ahead" aria-labelledby="gr-h-close" data-sec>
+    <div class="gr-photo" data-art="close" data-parallax data-alt="Placeholder drawing of an architectural colonnade in perspective. Replace with a full-width architectural photograph.">
+      <span class="gr-tag">Closing image slot · Architectural photography to be supplied</span>
+    </div>
+    <div class="gr-hero__veil"></div>
+    <div class="gr-wrap gr-close__inner">
+      <p class="gr-eyebrow gr-rv">07 <i>/</i> Looking ahead</p>
+      <h2 id="gr-h-close" class="gr-rv" style="--d:.06s">The next chapter <em>starts here.</em></h2>
+      <p class="gr-rv" style="--d:.12s">We continue to explore opportunities, strengthen business relationships and develop enterprises that contribute to a more connected and commercially dynamic future.</p>
+      <!-- Link to the existing Goldrock contact page; confirm the path on the live site -->
+      <a class="gr-cta gr-rv" style="--d:.18s" href="https://www.goldrockinternational.com/contact">
+        <span>Connect with Goldrock</span>
+        <svg viewBox="0 0 26 10" aria-hidden="true"><path d="M0 5h24M20 1l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var W = 1600, H = 1000;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- architectural plates: SVG drawn in code, replaced by photos via data-src ---------- */
+  function f(n) { return Math.round(n * 10) / 10; }
+  function ridge(y0, amp, fr, ph, closed) {
+    var d = "", x;
+    for (x = 0; x <= W; x += 20) {
+      var y = y0 + amp * Math.sin(x * fr + ph) + amp * 0.45 * Math.sin(x * fr * 2.3 + ph * 1.7);
+      d += (x ? " L" : "M") + x + " " + f(y);
+    }
+    return closed ? d + " L" + W + " " + H + " L0 " + H + " Z" : d;
+  }
+  function hills(count, top, gap, amp) {
+    var s = "", i, k;
+    for (i = 0; i < count; i++) {
+      var y0 = top + i * gap, ph = i * 1.3 + 0.6, fr = 0.0035 + i * 0.0004;
+      s += '<path class="fl" d="' + ridge(y0, amp, fr, ph, true) + '"/>';
+      for (k = 1; k <= 4; k++) s += '<path class="ln2" d="' + ridge(y0 + k * (gap / 5.2), amp * 0.92, fr, ph, false) + '"/>';
+    }
+    return s;
+  }
+  function saw(x0, y, n, w, h, wall) {
+    var s = "", i, x;
+    s += '<rect class="fl2" x="' + x0 + '" y="' + (y - wall) + '" width="' + (n * w) + '" height="' + wall + '"/>';
+    for (i = 0; i < n; i++) {
+      x = x0 + i * w;
+      s += '<path class="fl" d="M' + x + " " + (y - wall) + " L" + x + " " + (y - wall - h) + " L" + (x + w) + " " + (y - wall) + ' Z"/>';
+      s += '<line class="ln2" x1="' + (x + w * 0.5) + '" y1="' + (y - wall) + '" x2="' + (x + w * 0.5) + '" y2="' + y + '"/>';
+    }
+    s += '<rect class="fl" x="' + (x0 + n * w - w * 0.5) + '" y="' + (y - wall - h * 2.4) + '" width="' + (w * 0.22) + '" height="' + (h * 2.4) + '"/>';
+    return s;
+  }
+  function tower(cx, yb, yt, wb, wt) {
+    var s = "", levels = 14, i, xl, xr, xl2, xr2, y1, y2, t1, t2;
+    for (i = 0; i < levels; i++) {
+      t1 = i / levels; t2 = (i + 1) / levels;
+      y1 = yb + (yt - yb) * t1; y2 = yb + (yt - yb) * t2;
+      var w1 = wb + (wt - wb) * t1, w2 = wb + (wt - wb) * t2;
+      xl = cx - w1 / 2; xr = cx + w1 / 2; xl2 = cx - w2 / 2; xr2 = cx + w2 / 2;
+      s += '<line class="ln" x1="' + f(xl) + '" y1="' + f(y1) + '" x2="' + f(xr) + '" y2="' + f(y1) + '"/>';
+      s += '<line class="ln2" x1="' + f(xl) + '" y1="' + f(y1) + '" x2="' + f(xr2) + '" y2="' + f(y2) + '"/>';
+      s += '<line class="ln2" x1="' + f(xr) + '" y1="' + f(y1) + '" x2="' + f(xl2) + '" y2="' + f(y2) + '"/>';
+    }
+    s += '<line class="ln" x1="' + (cx - wb / 2) + '" y1="' + yb + '" x2="' + (cx - wt / 2) + '" y2="' + yt + '"/>';
+    s += '<line class="ln" x1="' + (cx + wb / 2) + '" y1="' + yb + '" x2="' + (cx + wt / 2) + '" y2="' + yt + '"/>';
+    s += '<line class="ln" x1="' + cx + '" y1="' + yt + '" x2="' + cx + '" y2="' + (yt - 70) + '"/><circle class="dot" cx="' + cx + '" cy="' + (yt - 70) + '" r="4"/>';
+    for (i = 1; i <= 4; i++) s += '<path class="ln2" d="M' + (cx - i * 48) + " " + (yt - 70 + i * 34) + " A" + (i * 62) + " " + (i * 62) + ' 0 0 1 ' + (cx - i * 48) + " " + (yt - 70 - i * 34) + '"/><path class="ln2" d="M' + (cx + i * 48) + " " + (yt - 70 - i * 34) + " A" + (i * 62) + " " + (i * 62) + ' 0 0 1 ' + (cx + i * 48) + " " + (yt - 70 + i * 34) + '"/>';
+    return s;
+  }
+  function arch(x, y, w, h) {
+    var r = w / 2;
+    return "M" + x + " " + (y + h) + " V" + (y + r) + " A" + r + " " + r + " 0 0 1 " + (x + w) + " " + (y + r) + " V" + (y + h);
+  }
+  function arcade(x0, y, n, w, h, gap) {
+    var s = "", i, x;
+    for (i = 0; i < n; i++) {
+      x = x0 + i * (w + gap);
+      s += '<path class="fl" d="' + arch(x, y, w, h) + ' Z"/>';
+      s += '<path class="ln" d="' + arch(x + w * 0.14, y + w * 0.14, w * 0.72, h - w * 0.14) + '"/>';
+      s += '<path class="ln2" d="' + arch(x + w * 0.28, y + w * 0.28, w * 0.44, h - w * 0.28) + '"/>';
+      s += '<line class="ln2" x1="' + (x + w / 2) + '" y1="' + (y - 120) + '" x2="' + (x + w / 2) + '" y2="' + (y + w * 0.5) + '"/><circle class="dot" cx="' + (x + w / 2) + '" cy="' + (y + w * 0.5 + 8) + '" r="7"/>';
+    }
+    return s;
+  }
+  function dimline(x1, y, x2, label) {
+    return '<line class="ln2" x1="' + x1 + '" y1="' + y + '" x2="' + x2 + '" y2="' + y + '"/>' +
+      '<line class="ln2" x1="' + x1 + '" y1="' + (y - 10) + '" x2="' + x1 + '" y2="' + (y + 10) + '"/>' +
+      '<line class="ln2" x1="' + x2 + '" y1="' + (y - 10) + '" x2="' + x2 + '" y2="' + (y + 10) + '"/>';
+  }
+  function ground(y) {
+    var s = '<line class="ln" x1="0" y1="' + y + '" x2="' + W + '" y2="' + y + '"/>', x;
+    for (x = 0; x < W; x += 60) s += '<line class="ln2" x1="' + x + '" y1="' + (y + 40) + '" x2="' + (x + 90) + '" y2="' + (y + 130) + '"/>';
+    return s;
+  }
+  var ART = {
+    hero: function () {
+      return hills(4, 520, 70, 26) +
+        saw(180, 770, 9, 78, 62, 90).replace(/class="fl"/g, 'class="fl"') +
+        tower(1280, 800, 190, 150, 18) + ground(800) + dimline(180, 880, 882);
+    },
+    story: function () {
+      var s = "", i;
+      for (i = 0; i < 7; i++) s += '<path class="fl" d="M' + (110 + i * 200) + " 820 V420 L" + (210 + i * 200) + " 330 L" + (310 + i * 200) + ' 420 V820"/><path class="ln2" d="M' + (150 + i * 200) + " 820 V450 L" + (210 + i * 200) + " 400 L" + (270 + i * 200) + ' 450 V820"/>';
+      return s + '<line class="ln" x1="60" y1="300" x2="1540" y2="300"/>' + ground(820) + dimline(110, 910, 1510);
+    },
+    agri: function () { return hills(7, 330, 95, 34) + '<circle class="ln" cx="360" cy="190" r="86"/><circle class="ln2" cx="360" cy="190" r="124"/>'; },
+    hosp: function () { return arcade(120, 300, 4, 280, 520, 70) + ground(820) + '<line class="ln" x1="60" y1="300" x2="1540" y2="300"/>'; },
+    manu: function () { return saw(130, 800, 12, 112, 100, 150) + '<rect class="fl" x="1180" y="330" width="90" height="320"/><line class="ln" x1="1225" y1="330" x2="1225" y2="250"/>' + ground(800) + dimline(130, 890, 1474); },
+    infra: function () { return hills(2, 690, 60, 22) + tower(800, 820, 170, 380, 26) + ground(820); },
+    plan: function () {
+      var s = "", x, y;
+      for (x = 0; x <= W; x += 80) s += '<line class="ln2" x1="' + x + '" y1="0" x2="' + x + '" y2="' + H + '"/>';
+      for (y = 0; y <= H; y += 80) s += '<line class="ln2" x1="0" y1="' + y + '" x2="' + W + '" y2="' + y + '"/>';
+      s += '<rect class="fl" x="160" y="160" width="560" height="320"/><rect class="fl" x="800" y="160" width="400" height="320"/><rect class="fl" x="160" y="560" width="320" height="260"/><rect class="fl" x="560" y="560" width="640" height="260"/>';
+      for (x = 200; x < 700; x += 80) s += '<line class="ln2" x1="' + x + '" y1="160" x2="' + (x + 80) + '" y2="480"/>';
+      s += '<circle class="ln" cx="1380" cy="260" r="90"/><circle class="ln2" cx="1380" cy="260" r="130"/><path class="ln" d="M1380 140 V380 M1260 260 H1500"/>';
+      return s + dimline(160, 900, 1200) + dimline(160, 110, 720);
+    },
+    close: function () {
+      var s = "", i, cx = 800, vy = 520, xs = [-720, -540, -380, -240, -130, -50];
+      s += hills(1, 640, 0, 14);
+      for (i = 0; i < xs.length; i++) {
+        var l = cx + xs[i], r = cx - xs[i], t = 1 - i * 0.1, wd = 70 * (1 - i * 0.14);
+        s += '<rect class="fl" x="' + (l - wd / 2) + '" y="' + (vy - 360 * t) + '" width="' + wd + '" height="' + (900 - vy + 360 * t - 100 * i) + '"/>';
+        s += '<rect class="fl" x="' + (r - wd / 2) + '" y="' + (vy - 360 * t) + '" width="' + wd + '" height="' + (900 - vy + 360 * t - 100 * i) + '"/>';
+      }
+      s += '<line class="ln" x1="0" y1="' + (vy - 360) + '" x2="' + W + '" y2="' + (vy - 360) + '"/>';
+      for (i = -6; i <= 6; i++) s += '<line class="ln2" x1="' + (cx + i * 14) + '" y1="' + vy + '" x2="' + (cx + i * 260) + '" y2="' + H + '"/>';
+      return s;
+    }
+  };
+
+  document.querySelectorAll("[data-art]").forEach(function (el) {
+    var fn = ART[el.getAttribute("data-art")]; if (!fn) return;
+    var holder = document.createElement("div");
+    holder.className = "gr-photo__art";
+    holder.innerHTML = '<svg class="gr-art" viewBox="0 0 ' + W + " " + H + '" preserveAspectRatio="xMidYMid slice" role="img" aria-label="' + (el.getAttribute("data-alt") || "").replace(/"/g, "&quot;") + '">' + fn() + "</svg>";
+    el.insertBefore(holder, el.firstChild);
+    if (!el.classList.contains("gr-photo")) el.classList.add("gr-photo");
+    var src = el.getAttribute("data-src");
+    if (src) {
+      var img = new Image(); img.loading = "lazy"; img.decoding = "async"; img.alt = el.getAttribute("data-alt") || ""; img.src = src;
+      el.appendChild(img); el.classList.add("has-src"); holder.setAttribute("aria-hidden", "true");
+    }
+  });
+
+  /* ---------- scroll reveals ---------- */
+  document.documentElement.classList.add("gr-js");
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }) : null;
+  document.querySelectorAll(".gr-rv, .gr-photo").forEach(function (el) { io ? io.observe(el) : el.classList.add("is-in"); });
+  setTimeout(function () { document.querySelectorAll(".gr-rv:not(.is-in)").forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add("is-in"); }); }, 1800);
+
+  /* ---------- section rail + progress ---------- */
+  var links = {}; document.querySelectorAll(".gr-rail a").forEach(function (a) { links[a.getAttribute("href").slice(1)] = a; });
+  if ("IntersectionObserver" in window) {
+    var so = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { Object.keys(links).forEach(function (k) { links[k].classList.remove("is-on"); }); if (links[e.target.id]) links[e.target.id].classList.add("is-on"); }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll("[data-sec]").forEach(function (s) { so.observe(s); });
+  }
+  var bar = document.querySelector(".gr-progress b"), par = document.querySelectorAll("[data-parallax] .gr-photo__art, [data-parallax].gr-photo > .gr-photo__art"), tick = false;
+  function frame() {
+    tick = false;
+    var max = document.documentElement.scrollHeight - innerHeight;
+    if (bar && max > 0) bar.style.transform = "scaleX(" + Math.min(1, Math.max(0, scrollY / max)) + ")";
+    if (!reduce) par.forEach(function (a) {
+      var box = a.parentNode.getBoundingClientRect();
+      if (box.bottom < 0 || box.top > innerHeight) return;
+      var off = (box.top + box.height / 2 - innerHeight / 2) * -0.07;
+      a.style.setProperty("--py", f(off) + "px");
+    });
+  }
+  function req() { if (!tick) { tick = true; requestAnimationFrame(frame); } }
+  addEventListener("scroll", req, { passive: true }); addEventListener("resize", req); frame();
+})();
+</script>

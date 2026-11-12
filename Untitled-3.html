@@ -1,0 +1,2271 @@
+
+<title>About Us | Goldrock International</title>
+<meta name="description" content="Discover Goldrock International, a diversified enterprise with business interests across agriculture, commodities, hospitality, trade, manufacturing and infrastructure.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+@property --sc {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 1.06;
+}
+@property --py {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+/* =========================================
+   GOLDROCK ABOUT — SCOPED DESIGN SYSTEM
+========================================= */
+
+.gr-page {
+  --ink: #1B1D1A;
+  --ink-2: #292C27;
+  --ivory: #F3F1EB;
+  --white: #FFFFFF;
+  --gold: #B99A61;
+  --gold-lt: #D7C49D;
+  --stone: #77776F;
+  --mute-light: #5C5C55;
+  --mute-dark: #A7A79D;
+  --line-light: rgba(27,29,26,.18);
+  --line-dark: rgba(243,241,235,.18);
+  --serif: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --pad: clamp(16px, 5vw, 76px);
+  --section: clamp(4.5rem, 11vw, 9.5rem);
+
+  position: relative;
+  width: 100%;
+  overflow-x: clip;
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: var(--sans);
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.gr-page,
+.gr-page * {
+  box-sizing: border-box;
+}
+
+.gr-page a {
+  color: inherit;
+}
+
+.gr-page :focus-visible {
+  outline: 2px solid var(--gold-lt);
+  outline-offset: 4px;
+}
+
+.gr-wrap {
+  padding-left: max(var(--pad), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--pad), env(safe-area-inset-right, 0px));
+  max-width: 1680px;
+  margin: 0 auto;
+}
+
+.gr-sec {
+  padding-block: var(--section);
+  position: relative;
+}
+
+.gr-light {
+  background: var(--ivory);
+  color: var(--ink);
+}
+
+.gr-dark {
+  background: var(--ink);
+  color: var(--ivory);
+}
+
+.gr-dark2 {
+  background: var(--ink-2);
+  color: var(--ivory);
+}
+
+.gr-page .gr-mute {
+  color: var(--mute-light);
+}
+
+.gr-page .gr-dark .gr-mute,
+.gr-page .gr-dark2 .gr-mute {
+  color: var(--mute-dark);
+}
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+.gr-eyebrow {
+  font: 600 .72rem/1.5 var(--sans);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 1.6rem;
+}
+
+.gr-eyebrow i {
+  font-style: normal;
+  opacity: .6;
+  margin: 0 .5em;
+}
+
+.gr-h2 {
+  font: 400 clamp(2.4rem, 6.2vw, 5.6rem)/1.02 var(--serif);
+  letter-spacing: -.02em;
+  margin: 0;
+  text-wrap: balance;
+  font-variation-settings: "opsz" 96;
+}
+
+.gr-h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.gr-light .gr-eyebrow {
+  color: #8C7235;
+}
+
+.gr-light .gr-h2 em {
+  color: #8C7235;
+}
+
+.gr-lede {
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+  max-width: 38rem;
+}
+
+.gr-body {
+  font-size: 1rem;
+  max-width: 36rem;
+}
+
+.gr-ph {
+  color: var(--mute-light);
+  border-left: 1px solid #8C7235;
+  padding-left: 1rem;
+  font-size: .85rem;
+}
+
+.gr-dark .gr-ph,
+.gr-dark2 .gr-ph {
+  color: var(--mute-dark);
+  border-color: var(--gold);
+}
+
+/* =========================================
+   IMAGE PLATES
+========================================= */
+
+.gr-photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: var(--ink-2);
+  isolation: isolate;
+}
+
+.gr-photo__art {
+  --sc: 1.06;
+  --py: 0px;
+
+  position: absolute;
+  inset: 0;
+  transform: translate3d(0, var(--py), 0) scale(var(--sc));
+  transition: --sc 1.6s cubic-bezier(.2,.7,.2,1);
+  background:
+    radial-gradient(70% 60% at 72% 28%, rgba(185,154,97,.2), transparent 70%),
+    var(--ink-2);
+}
+
+.gr-photo[data-parallax] .gr-photo__art {
+  inset: -9% 0;
+}
+
+.gr-photo.is-in .gr-photo__art {
+  --sc: 1;
+}
+
+.gr-photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 1.4s cubic-bezier(.2,.7,.2,1);
+}
+
+.gr-art {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.gr-art .ln {
+  fill: none;
+  stroke: var(--gold);
+  stroke-opacity: .55;
+  stroke-width: 1.1;
+  vector-effect: non-scaling-stroke;
+}
+
+.gr-art .ln2 {
+  fill: none;
+  stroke: var(--gold-lt);
+  stroke-opacity: .28;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.gr-art .fl {
+  fill: var(--ink);
+  stroke: var(--gold);
+  stroke-opacity: .5;
+  stroke-width: 1.1;
+  vector-effect: non-scaling-stroke;
+}
+
+.gr-art .fl2 {
+  fill: #222520;
+  stroke: var(--gold);
+  stroke-opacity: .42;
+  stroke-width: 1.1;
+  vector-effect: non-scaling-stroke;
+}
+
+.gr-art .dot {
+  fill: var(--gold);
+  fill-opacity: .8;
+}
+
+.gr-tag {
+  position: absolute;
+  left: 1rem;
+  bottom: .9rem;
+  z-index: 2;
+  font: 600 .62rem/1.3 var(--sans);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+  opacity: .75;
+}
+
+.gr-photo.has-src .gr-tag,
+.gr-hero .gr-tag {
+  display: none;
+}
+
+/* =========================================
+   SCROLL REVEALS
+========================================= */
+
+.gr-rv {
+  transition: transform .85s cubic-bezier(.2,.7,.2,1);
+  transition-delay: var(--d, 0s);
+}
+
+.gr-js .gr-rv:not(.is-in) {
+  transform: translateY(34px);
+}
+
+/* =========================================
+   PROGRESS AND SECTION NAVIGATION
+========================================= */
+
+.gr-progress {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: env(safe-area-inset-top, 0px);
+  height: 2px;
+  z-index: 999;
+  background: transparent;
+  pointer-events: none;
+}
+
+.gr-progress b {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+}
+
+.gr-rail {
+  position: fixed;
+  right: max(1.2rem, env(safe-area-inset-right, 0px));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 998;
+  display: none;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .7rem .6rem;
+  background: rgba(27,29,26,.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line-dark);
+}
+
+.gr-rail a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .7rem;
+  text-decoration: none;
+  font: 600 .62rem/1 var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--mute-dark);
+  padding: .5rem .2rem;
+}
+
+.gr-rail a span {
+  display: inline-block;
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: max-width .5s, opacity .4s;
+}
+
+.gr-rail a::after {
+  content: attr(data-n);
+  font-variant-numeric: tabular-nums;
+  color: var(--mute-dark);
+}
+
+.gr-rail a.is-on {
+  color: var(--gold-lt);
+}
+
+.gr-rail a.is-on::after {
+  color: var(--gold);
+}
+
+.gr-rail a.is-on span,
+.gr-rail a:hover span,
+.gr-rail a:focus-visible span {
+  max-width: 14rem;
+  opacity: 1;
+}
+
+@media (min-width: 1100px) {
+  .gr-rail {
+    display: flex;
+  }
+}
+
+/* =========================================
+   01 — HERO
+========================================= */
+
+.gr-hero {
+  position: relative;
+  min-height: clamp(36rem, 92svh, 58rem);
+  display: flex;
+  align-items: flex-end;
+  background: var(--ink);
+  overflow: hidden;
+}
+
+.gr-hero > .gr-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.gr-hero__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(27,29,26,.55) 0%, rgba(27,29,26,.2) 38%, rgba(27,29,26,.88) 100%),
+    linear-gradient(90deg, rgba(27,29,26,.7), transparent 70%);
+}
+
+.gr-hero__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-block: clamp(7rem, 16vw, 11rem) clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  gap: 2rem;
+}
+
+.gr-hero h1 {
+  font: 400 clamp(2.9rem, 8.3vw, 8.2rem)/.96 var(--serif);
+  letter-spacing: -.03em;
+  margin: 0 0 .2em;
+  max-width: none;
+  text-wrap: balance;
+  font-variation-settings: "opsz" 96;
+}
+
+.gr-hero h1 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+.gr-hero__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  border-top: 1px solid var(--line-dark);
+  padding-top: 1.6rem;
+}
+
+.gr-hero__foot p {
+  margin: 0;
+  max-width: 34rem;
+  color: var(--ivory);
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
+.gr-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  font: 600 .68rem/1 var(--sans);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--gold-lt);
+}
+
+.gr-scroll i {
+  position: relative;
+  width: 1px;
+  height: 3.6rem;
+  background: var(--line-dark);
+  overflow: hidden;
+  display: block;
+}
+
+.gr-scroll i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -40%;
+  width: 1px;
+  height: 40%;
+  background: var(--gold);
+  animation: gr-drop 2.4s cubic-bezier(.6,0,.3,1) infinite;
+}
+
+@keyframes gr-drop {
+  to { top: 110%; }
+}
+
+/* =========================================
+   02 — STORY
+========================================= */
+
+.gr-story {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: clamp(1rem, 3vw, 3rem);
+  row-gap: 3rem;
+  align-items: start;
+}
+
+.gr-story__text {
+  grid-column: 1 / span 5;
+}
+
+.gr-story__fig {
+  grid-column: 7 / span 6;
+  margin: clamp(0rem, 6vw, 6rem) 0 0;
+  position: sticky;
+  top: 5rem;
+}
+
+.gr-story__fig .gr-photo {
+  aspect-ratio: 4 / 5;
+}
+
+.gr-story__fig figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--line-light);
+  margin-top: 1rem;
+  padding-top: .8rem;
+  font-size: .78rem;
+  letter-spacing: .06em;
+  color: var(--mute-light);
+}
+
+.gr-story .gr-h2 {
+  margin-bottom: 2.2rem;
+}
+
+.gr-story p {
+  margin: 0 0 1.3rem;
+}
+
+.gr-story__statement {
+  margin-top: 2.8rem;
+  padding: 1.8rem 0;
+  border-top: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.gr-story__statement span {
+  display: block;
+  font: 700 .65rem/1.4 var(--sans);
+  letter-spacing: .2em;
+  color: #8C7235;
+  margin-bottom: 1rem;
+}
+
+.gr-story__statement p {
+  font: 400 clamp(1.6rem, 3vw, 2.5rem)/1.2 var(--serif);
+  max-width: 24ch;
+  margin: 0;
+}
+
+/* =========================================
+   03 — BUSINESS PORTFOLIO
+========================================= */
+
+.gr-port__head {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: clamp(1rem, 3vw, 3rem);
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+  align-items: end;
+}
+
+.gr-port__head > div:first-child {
+  grid-column: 1 / span 8;
+}
+
+.gr-port__head > p {
+  grid-column: 10 / span 3;
+  margin: 0;
+  font-size: .9rem;
+}
+
+.gr-divs {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: clamp(1rem, 3vw, 3rem);
+  row-gap: clamp(3.5rem, 7vw, 7rem);
+}
+
+.gr-div {
+  position: relative;
+  min-width: 0;
+}
+
+.gr-div .gr-photo {
+  aspect-ratio: 5 / 4;
+}
+
+.gr-div--1 { grid-column: 1 / span 7; }
+.gr-div--2 { grid-column: 9 / span 4; margin-top: clamp(0rem, 14vw, 13rem); }
+.gr-div--3 { grid-column: 2 / span 4; }
+.gr-div--4 { grid-column: 7 / span 6; margin-top: clamp(0rem, 9vw, 8rem); }
+
+.gr-div__no {
+  position: absolute;
+  z-index: 3;
+  top: -.38em;
+  right: -.04em;
+  font: 400 clamp(5rem, 13vw, 12rem)/1 var(--serif);
+  color: transparent;
+  -webkit-text-stroke: 1px var(--gold);
+  opacity: .72;
+  letter-spacing: -.04em;
+  pointer-events: none;
+  font-variant-numeric: lining-nums;
+}
+
+.gr-div--2 .gr-div__no,
+.gr-div--3 .gr-div__no {
+  right: auto;
+  left: -.04em;
+}
+
+.gr-div__body {
+  padding-top: 1.6rem;
+  display: grid;
+  gap: .9rem;
+  position: relative;
+  z-index: 3;
+}
+
+.gr-div__body .gr-eyebrow {
+  margin: 0;
+}
+
+.gr-div h3 {
+  font: 400 clamp(1.8rem, 3.4vw, 3rem)/1.05 var(--serif);
+  letter-spacing: -.015em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.gr-div__body p {
+  margin: 0;
+  color: var(--mute-dark);
+  max-width: 32rem;
+}
+
+.gr-acts {
+  list-style: none;
+  padding: 1rem 0 0;
+  margin: .4rem 0 0;
+  border-top: 1px solid var(--line-dark);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1.6rem;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ivory);
+}
+
+.gr-acts li::before {
+  content: "";
+  display: inline-block;
+  width: .45rem;
+  height: 1px;
+  background: var(--gold);
+  vertical-align: middle;
+  margin-right: .6rem;
+}
+
+.gr-div:hover .gr-photo img {
+  transform: scale(1.045);
+}
+
+.gr-note {
+  margin: clamp(3rem, 6vw, 5rem) 0 0;
+  font-size: .78rem;
+  color: var(--mute-dark);
+  border-top: 1px solid var(--line-dark);
+  padding-top: 1rem;
+  max-width: 46rem;
+}
+
+/* =========================================
+   04 — PHILOSOPHY
+========================================= */
+
+.gr-appr .gr-h2 {
+  max-width: 15ch;
+  margin-bottom: clamp(3rem, 7vw, 6.5rem);
+}
+
+.gr-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: clamp(1.2rem, 3vw, 3rem);
+  row-gap: 3rem;
+}
+
+.gr-col {
+  border-top: 1px solid var(--ink);
+  padding-top: 1.4rem;
+}
+
+.gr-col b {
+  display: block;
+  font: 400 clamp(3.2rem, 6vw, 5.4rem)/1 var(--serif);
+  color: #8C7235;
+  letter-spacing: -.03em;
+  margin-bottom: 2.2rem;
+  font-variant-numeric: lining-nums;
+}
+
+.gr-col h3 {
+  font: 700 .74rem/1.4 var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  margin: 0 0 .8rem;
+}
+
+.gr-col p {
+  margin: 0;
+  color: var(--mute-light);
+  font-size: .98rem;
+  max-width: 18rem;
+}
+
+/* =========================================
+   05 — OPERATIONS
+========================================= */
+
+.gr-cap {
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  background: var(--ink-2);
+  color: var(--ivory);
+}
+
+.gr-cap > .gr-photo {
+  min-height: 100%;
+}
+
+.gr-cap__panel {
+  padding: clamp(3rem, 7vw, 7rem) var(--pad) clamp(3rem, 7vw, 7rem) clamp(1.6rem, 5vw, 5.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+  min-width: 0;
+}
+
+.gr-cap__panel .gr-h2 {
+  font-size: clamp(2.2rem, 4.6vw, 4.4rem);
+}
+
+.gr-stmts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line-dark);
+}
+
+.gr-stmts li {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: 1.2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.gr-stmts h3 {
+  margin: 0;
+  font: 700 .68rem/1.5 var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.gr-stmts p {
+  margin: 0;
+  color: var(--ivory);
+  font-size: .98rem;
+}
+
+/* =========================================
+   06 — CORPORATE PERSPECTIVE
+========================================= */
+
+.gr-perspective__head {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: clamp(3rem, 7vw, 6rem);
+}
+
+.gr-perspective__head .gr-lede {
+  margin: 0 0 .5rem;
+}
+
+.gr-perspective__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.gr-perspective__feature {
+  border-top: 1px solid var(--line-light);
+  padding-top: 1.5rem;
+}
+
+.gr-perspective__feature span {
+  font: 700 .65rem/1.5 var(--sans);
+  letter-spacing: .2em;
+  color: #8C7235;
+}
+
+.gr-perspective__feature h3 {
+  font: 400 clamp(1.7rem, 2.7vw, 2.6rem)/1.1 var(--serif);
+  margin: 2.5rem 0 1rem;
+}
+
+.gr-perspective__feature p {
+  color: var(--mute-light);
+  font-size: .95rem;
+  max-width: 24rem;
+}
+
+/* =========================================
+   07 — CLOSING
+========================================= */
+
+.gr-close {
+  position: relative;
+  min-height: clamp(34rem, 90svh, 56rem);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.gr-close > .gr-photo {
+  position: absolute;
+  inset: 0;
+}
+
+.gr-close .gr-hero__veil {
+  background:
+    linear-gradient(180deg, rgba(27,29,26,.7), rgba(27,29,26,.45) 45%, rgba(27,29,26,.92));
+}
+
+.gr-close__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding-block: clamp(6rem, 12vw, 10rem) clamp(3rem, 6vw, 5rem);
+  display: grid;
+  gap: 2.2rem;
+}
+
+.gr-close h2 {
+  font: 400 clamp(3rem, 9.4vw, 8.6rem)/.95 var(--serif);
+  letter-spacing: -.03em;
+  margin: 0;
+  max-width: 12ch;
+  text-wrap: balance;
+  font-variation-settings: "opsz" 96;
+}
+
+.gr-close h2 em {
+  font-style: italic;
+  color: var(--gold-lt);
+}
+
+.gr-close p {
+  margin: 0;
+  max-width: 40rem;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+}
+
+.gr-cta {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.9rem;
+  background: var(--gold);
+  color: var(--ink) !important;
+  text-decoration: none;
+  font: 700 .74rem/1 var(--sans);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  border: 1px solid var(--gold);
+  transition: background .4s, color .4s;
+}
+
+.gr-cta svg {
+  width: 1.6rem;
+  height: .7rem;
+  transition: transform .4s;
+}
+
+.gr-cta svg * {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.4;
+}
+
+.gr-cta:hover {
+  background: transparent;
+  color: var(--gold-lt) !important;
+}
+
+.gr-cta:hover svg {
+  transform: translateX(.4rem);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .gr-story__text,
+  .gr-story__fig {
+    grid-column: 1 / -1;
+  }
+
+  .gr-story__fig {
+    margin: 0;
+    position: static;
+  }
+
+  .gr-story__fig .gr-photo {
+    aspect-ratio: 5 / 4;
+  }
+
+  .gr-port__head > div:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .gr-port__head > p {
+    grid-column: 1 / span 8;
+    margin-top: 1.6rem;
+  }
+
+  .gr-div--1,
+  .gr-div--2,
+  .gr-div--3,
+  .gr-div--4 {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+
+  .gr-div--2,
+  .gr-div--4 {
+    padding-left: 14%;
+  }
+
+  .gr-div--3 {
+    padding-right: 14%;
+  }
+
+  .gr-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gr-cap {
+    grid-template-columns: 1fr;
+  }
+
+  .gr-cap > .gr-photo {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
+
+  .gr-perspective__head {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .gr-perspective__body {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .gr-perspective__feature h3 {
+    margin-top: 1.5rem;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .gr-hero {
+    min-height: 34rem;
+  }
+
+  .gr-hero__foot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gr-port__head > p {
+    grid-column: 1 / -1;
+  }
+
+  .gr-div--2,
+  .gr-div--3,
+  .gr-div--4 {
+    padding: 0;
+  }
+
+  .gr-div__no {
+    font-size: 5.4rem;
+    top: -.32em;
+  }
+
+  .gr-cols {
+    grid-template-columns: 1fr;
+    row-gap: 2.4rem;
+  }
+
+  .gr-col b {
+    margin-bottom: 1.2rem;
+  }
+
+  .gr-col p {
+    max-width: none;
+  }
+
+  .gr-stmts li {
+    grid-template-columns: 1fr;
+    gap: .4rem;
+  }
+
+  .gr-cta {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .gr-story__fig figcaption {
+    flex-direction: column;
+    gap: .2rem;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .gr-page {
+    scroll-behavior: auto;
+  }
+
+  .gr-rv,
+  .gr-js .gr-rv:not(.is-in) {
+    transform: none;
+    transition: none;
+  }
+
+  .gr-photo__art {
+    transition: none;
+    --sc: 1;
+    transform: none;
+  }
+
+  .gr-photo img {
+    transition: none;
+  }
+
+  .gr-scroll i::after {
+    animation: none;
+    top: 0;
+  }
+
+  .gr-rail a span {
+    transition: none;
+  }
+}
+</style>
+
+<div class="gr-page" id="gr-about-page">
+
+  <div class="gr-progress" aria-hidden="true">
+    <b></b>
+  </div>
+
+  <nav class="gr-rail" aria-label="About Goldrock sections">
+    <a href="#top" data-n="01"><span>Corporate profile</span></a>
+    <a href="#story" data-n="02"><span>Our story</span></a>
+    <a href="#portfolio" data-n="03"><span>Business portfolio</span></a>
+    <a href="#approach" data-n="04"><span>Our philosophy</span></a>
+    <a href="#capabilities" data-n="05"><span>Our operations</span></a>
+    <a href="#leadership" data-n="06"><span>Our perspective</span></a>
+    <a href="#ahead" data-n="07"><span>Looking ahead</span></a>
+  </nav>
+
+  <main class="gr-about">
+
+    <!-- 01 / HERO -->
+
+    <section class="gr-hero" id="top" aria-labelledby="gr-h-hero" data-sec>
+
+      <figure class="gr-photo"
+        data-art="hero"
+        data-parallax
+        data-alt="Architectural illustration representing Goldrock's diversified business interests.">
+
+        <figcaption class="gr-tag">Goldrock corporate image</figcaption>
+      </figure>
+
+      <div class="gr-hero__veil"></div>
+
+      <div class="gr-wrap gr-hero__inner">
+
+        <p class="gr-eyebrow gr-rv">
+          Goldrock International<i>/</i>Corporate Profile
+        </p>
+
+        <h1 id="gr-h-hero" class="gr-rv" style="--d:.08s">
+          Enterprise across industries.<br>
+          <em>Progress across markets.</em>
+        </h1>
+
+        <div class="gr-hero__foot gr-rv" style="--d:.16s">
+
+          <p>
+            Goldrock International brings together diverse
+            business interests spanning agriculture, hospitality,
+            trade, manufacturing and infrastructure.
+          </p>
+
+          <a class="gr-scroll"
+            href="#story"
+            aria-label="Scroll to section 02, Our story">
+
+            <span>02 / Our story</span>
+            <i aria-hidden="true"></i>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 02 / OUR STORY -->
+
+    <section class="gr-sec gr-light"
+      id="story"
+      aria-labelledby="gr-h-story"
+      data-sec>
+
+      <div class="gr-wrap">
+
+        <div class="gr-story">
+
+          <div class="gr-story__text">
+
+            <p class="gr-eyebrow gr-rv">
+              02 <i>/</i> Our story
+            </p>
+
+            <h2 class="gr-h2 gr-rv" id="gr-h-story">
+              Built on ambition.<br>
+              <em>Driven by enterprise.</em>
+            </h2>
+
+            <p class="gr-lede gr-rv">
+              Goldrock International is a diversified enterprise
+              with business interests across agriculture and
+              commodities, hospitality, trade and manufacturing,
+              and infrastructure and connectivity.
+            </p>
+
+            <p class="gr-body gr-rv">
+              Its portfolio brings together businesses operating
+              across different markets, products and commercial
+              environments. From agricultural products and
+              hospitality experiences to manufacturing and
+              telecommunications, Goldrock's interests extend
+              across a broad range of enterprise.
+            </p>
+
+            <p class="gr-body gr-rv">
+              The company's story is best understood through
+              the businesses it develops, the markets it serves
+              and the opportunities it continues to pursue.
+            </p>
+
+            <div class="gr-story__statement gr-rv">
+
+              <span>THE GOLDROCK PERSPECTIVE</span>
+
+              <p>
+                A broader view of business. A portfolio of
+                opportunities across industries.
+              </p>
+
+            </div>
+
+          </div>
+
+          <figure class="gr-story__fig gr-rv" style="--d:.1s">
+
+            <div class="gr-photo"
+              data-art="story"
+              data-alt="Architectural illustration of an industrial production hall.">
+
+              <span class="gr-tag">Goldrock operations</span>
+            </div>
+
+            <figcaption>
+              <span>Business, industry and enterprise</span>
+              <span>Goldrock International</span>
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 03 / BUSINESS PORTFOLIO -->
+
+    <section class="gr-sec gr-dark"
+      id="portfolio"
+      aria-labelledby="gr-h-port"
+      data-sec>
+
+      <div class="gr-wrap">
+
+        <div class="gr-port__head">
+
+          <div>
+            <p class="gr-eyebrow gr-rv">
+              03 <i>/</i> Our business portfolio
+            </p>
+
+            <h2 class="gr-h2 gr-rv" id="gr-h-port">
+              Different industries.<br>
+              <em>A connected vision.</em>
+            </h2>
+          </div>
+
+          <p class="gr-mute gr-rv">
+            A diverse portfolio of business interests,
+            presented across four areas of commercial activity.
+          </p>
+
+        </div>
+
+
+        <div class="gr-divs">
+
+          <!-- AGRICULTURE -->
+
+          <article class="gr-div gr-div--1 gr-rv">
+
+            <span class="gr-div__no" aria-hidden="true">01</span>
+
+            <div class="gr-photo"
+              data-art="agri"
+              data-alt="Architectural illustration representing agricultural landscapes and commodities.">
+
+              <span class="gr-tag">Agriculture and commodities</span>
+            </div>
+
+            <div class="gr-div__body">
+
+              <p class="gr-eyebrow">Portfolio area 01</p>
+
+              <h3>Agriculture &amp; Commodities</h3>
+
+              <p>
+                Agricultural products and natural commodities,
+                represented through Masai Coffee, Masai Tea
+                and Kili Natural.
+              </p>
+
+              <ul class="gr-acts">
+                <li>Masai Coffee</li>
+                <li>Masai Tea</li>
+                <li>Kili Natural</li>
+              </ul>
+
+            </div>
+          </article>
+
+
+          <!-- HOSPITALITY -->
+
+          <article class="gr-div gr-div--2 gr-rv" style="--d:.1s">
+
+            <span class="gr-div__no" aria-hidden="true">02</span>
+
+            <div class="gr-photo"
+              data-art="hosp"
+              data-alt="Architectural illustration representing hospitality and café spaces.">
+
+              <span class="gr-tag">Hospitality and experiences</span>
+            </div>
+
+            <div class="gr-div__body">
+
+              <p class="gr-eyebrow">Portfolio area 02</p>
+
+              <h3>Hospitality &amp; Experiences</h3>
+
+              <p>
+                Coffee tours, cafés and restaurants that create
+                customer-facing experiences around food,
+                beverages and hospitality.
+              </p>
+
+              <ul class="gr-acts">
+                <li>Masai Coffee Tours</li>
+                <li>Cafés</li>
+                <li>Restaurants</li>
+              </ul>
+
+            </div>
+          </article>
+
+
+          <!-- TRADE AND MANUFACTURING -->
+
+          <article class="gr-div gr-div--3 gr-rv">
+
+            <span class="gr-div__no" aria-hidden="true">03</span>
+
+            <div class="gr-photo"
+              data-art="manu"
+              data-alt="Architectural illustration representing industrial manufacturing.">
+
+              <span class="gr-tag">Trade and manufacturing</span>
+            </div>
+
+            <div class="gr-div__body">
+
+              <p class="gr-eyebrow">Portfolio area 03</p>
+
+              <h3>Trade &amp; Manufacturing</h3>
+
+              <p>
+                Manufacturing, duty-free retail and
+                commercial distribution activities.
+              </p>
+
+              <ul class="gr-acts">
+                <li>Manufacturing</li>
+                <li>Duty-free retail</li>
+                <li>Commercial distribution</li>
+              </ul>
+
+            </div>
+          </article>
+
+
+          <!-- INFRASTRUCTURE -->
+
+          <article class="gr-div gr-div--4 gr-rv" style="--d:.1s">
+
+            <span class="gr-div__no" aria-hidden="true">04</span>
+
+            <div class="gr-photo"
+              data-art="infra"
+              data-alt="Architectural illustration representing telecommunications infrastructure.">
+
+              <span class="gr-tag">Infrastructure and connectivity</span>
+            </div>
+
+            <div class="gr-div__body">
+
+              <p class="gr-eyebrow">Portfolio area 04</p>
+
+              <h3>Infrastructure &amp; Connectivity</h3>
+
+              <p>
+                Telecommunications and connectivity-related
+                business interests.
+              </p>
+
+              <ul class="gr-acts">
+                <li>Telecommunications</li>
+                <li>Connectivity</li>
+              </ul>
+
+            </div>
+          </article>
+
+        </div>
+
+        <p class="gr-note gr-rv">
+          These are presentation groupings of Goldrock's
+          business interests. They do not necessarily
+          represent separate legal entities or subsidiaries.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- 04 / OUR PHILOSOPHY -->
+
+    <section class="gr-sec gr-light gr-appr"
+      id="approach"
+      aria-labelledby="gr-h-appr"
+      data-sec>
+
+      <div class="gr-wrap">
+
+        <p class="gr-eyebrow gr-rv">
+          04 <i>/</i> Our philosophy
+        </p>
+
+        <h2 class="gr-h2 gr-rv" id="gr-h-appr">
+          A broader view of <em>enterprise.</em>
+        </h2>
+
+        <div class="gr-cols">
+
+          <div class="gr-col gr-rv">
+
+            <b>01</b>
+
+            <h3>Market Perspective</h3>
+
+            <p>
+              Recognising opportunities across different
+              industries, markets and commercial environments.
+            </p>
+
+          </div>
+
+          <div class="gr-col gr-rv" style="--d:.07s">
+
+            <b>02</b>
+
+            <h3>Business Development</h3>
+
+            <p>
+              Exploring opportunities to develop products,
+              services and business activities.
+            </p>
+
+          </div>
+
+          <div class="gr-col gr-rv" style="--d:.14s">
+
+            <b>03</b>
+
+            <h3>Commercial Relationships</h3>
+
+            <p>
+              Recognising the importance of customers,
+              suppliers and business relationships.
+            </p>
+
+          </div>
+
+          <div class="gr-col gr-rv" style="--d:.21s">
+
+            <b>04</b>
+
+            <h3>Long-term Perspective</h3>
+
+            <p>
+              Considering the broader direction and
+              development of business opportunities.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 05 / OUR OPERATIONS -->
+
+    <section class="gr-cap"
+      id="capabilities"
+      aria-labelledby="gr-h-cap"
+      data-sec>
+
+      <div class="gr-photo"
+        data-art="plan"
+        data-parallax
+        data-alt="Architectural illustration of an industrial facility layout.">
+
+        <span class="gr-tag">Goldrock operations and facilities</span>
+      </div>
+
+      <div class="gr-cap__panel">
+
+        <div class="gr-rv">
+
+          <p class="gr-eyebrow">
+            05 <i>/</i> Our operations
+          </p>
+
+          <h2 class="gr-h2" id="gr-h-cap">
+            Different environments.<br>
+            <em>Distinct opportunities.</em>
+          </h2>
+
+          <p class="gr-lede">
+            A diversified portfolio brings together
+            businesses with different products, operating
+            environments and customer requirements.
+          </p>
+
+        </div>
+
+        <ul class="gr-stmts gr-rv" style="--d:.08s">
+
+          <li>
+            <h3>Production</h3>
+            <p>
+              Agricultural products, commodities and
+              manufacturing activities.
+            </p>
+          </li>
+
+          <li>
+            <h3>Experiences</h3>
+            <p>
+              Customer-facing hospitality, cafés,
+              restaurants and coffee experiences.
+            </p>
+          </li>
+
+          <li>
+            <h3>Commercial channels</h3>
+            <p>
+              Trade, retail and distribution-related
+              business activities.
+            </p>
+          </li>
+
+          <li>
+            <h3>Connectivity</h3>
+            <p>
+              Telecommunications and infrastructure-related
+              interests.
+            </p>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- 06 / CORPORATE PERSPECTIVE -->
+
+    <section class="gr-sec gr-light gr-perspective"
+      id="leadership"
+      aria-labelledby="gr-h-lead"
+      data-sec>
+
+      <div class="gr-wrap">
+
+        <div class="gr-perspective__head">
+
+          <div>
+
+            <p class="gr-eyebrow gr-rv">
+              06 <i>/</i> Our perspective
+            </p>
+
+            <h2 class="gr-h2 gr-rv" id="gr-h-lead">
+              Enterprise is built<br>
+              <em>with perspective.</em>
+            </h2>
+
+          </div>
+
+          <p class="gr-lede gr-rv">
+            Understanding different markets, recognising
+            opportunities and appreciating the relationships
+            that support business development.
+          </p>
+
+        </div>
+
+
+        <div class="gr-perspective__body">
+
+          <div class="gr-perspective__feature gr-rv">
+
+            <span>01 / DIRECTION</span>
+
+            <h3>A clear view of opportunity.</h3>
+
+            <p>
+              A diversified business portfolio calls for
+              an understanding of the different markets
+              and environments in which its businesses operate.
+            </p>
+
+          </div>
+
+          <div class="gr-perspective__feature gr-rv"
+            style="--d:.08s">
+
+            <span>02 / RESPONSIBILITY</span>
+
+            <h3>Considered business development.</h3>
+
+            <p>
+              The development of business activities should
+              be considered in the context of their markets,
+              operations and long-term direction.
+            </p>
+
+          </div>
+
+          <div class="gr-perspective__feature gr-rv"
+            style="--d:.16s">
+
+            <span>03 / RELATIONSHIPS</span>
+
+            <h3>People remain central to enterprise.</h3>
+
+            <p>
+              Customers, suppliers, employees and business
+              partners form an important part of the wider
+              commercial environment.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 07 / LOOKING AHEAD -->
+
+    <section class="gr-close"
+      id="ahead"
+      aria-labelledby="gr-h-close"
+      data-sec>
+
+      <div class="gr-photo"
+        data-art="close"
+        data-parallax
+        data-alt="Architectural illustration representing a forward-looking corporate perspective.">
+
+        <span class="gr-tag">Goldrock corporate imagery</span>
+      </div>
+
+      <div class="gr-hero__veil"></div>
+
+      <div class="gr-wrap gr-close__inner">
+
+        <p class="gr-eyebrow gr-rv">
+          07 <i>/</i> Looking ahead
+        </p>
+
+        <h2 id="gr-h-close" class="gr-rv" style="--d:.06s">
+          The next chapter <em>starts here.</em>
+        </h2>
+
+        <p class="gr-rv" style="--d:.12s">
+          We continue to explore opportunities, strengthen
+          business relationships and develop enterprises
+          that contribute to a more connected and commercially
+          dynamic future.
+        </p>
+
+        <a class="gr-cta gr-rv"
+          style="--d:.18s"
+          href="https://www.goldrockinternational.com/contact">
+
+          <span>Connect with Goldrock</span>
+
+          <svg viewBox="0 0 26 10" aria-hidden="true">
+            <path d="M0 5h24M20 1l4 4-4 4"/>
+          </svg>
+
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+
+<script>
+(function () {
+  "use strict";
+
+  var root = document.getElementById("gr-about-page");
+  if (!root) return;
+
+  var W = 1600;
+  var H = 1000;
+
+  var reduce = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* =========================================
+     ARCHITECTURAL ARTWORK
+  ========================================= */
+
+  function f(n) {
+    return Math.round(n * 10) / 10;
+  }
+
+  function ridge(y0, amp, fr, ph, closed) {
+    var d = "";
+
+    for (var x = 0; x <= W; x += 20) {
+      var y = y0 +
+        amp * Math.sin(x * fr + ph) +
+        amp * 0.45 * Math.sin(x * fr * 2.3 + ph * 1.7);
+
+      d += (x ? " L" : "M") + x + " " + f(y);
+    }
+
+    return closed
+      ? d + " L" + W + " " + H + " L0 " + H + " Z"
+      : d;
+  }
+
+  function hills(count, top, gap, amp) {
+    var s = "";
+
+    for (var i = 0; i < count; i++) {
+      var y0 = top + i * gap;
+      var ph = i * 1.3 + 0.6;
+      var fr = 0.0035 + i * 0.0004;
+
+      s += '<path class="fl" d="' +
+        ridge(y0, amp, fr, ph, true) + '"/>';
+
+      for (var k = 1; k <= 4; k++) {
+        s += '<path class="ln2" d="' +
+          ridge(y0 + k * (gap / 5.2), amp * 0.92, fr, ph, false) +
+          '"/>';
+      }
+    }
+
+    return s;
+  }
+
+  function saw(x0, y, n, w, h, wall) {
+    var s = "";
+
+    s += '<rect class="fl2" x="' + x0 +
+      '" y="' + (y - wall) +
+      '" width="' + (n * w) +
+      '" height="' + wall + '"/>';
+
+    for (var i = 0; i < n; i++) {
+      var x = x0 + i * w;
+
+      s += '<path class="fl" d="M' + x + " " +
+        (y - wall) + " L" + x + " " +
+        (y - wall - h) + " L" +
+        (x + w) + " " + (y - wall) + ' Z"/>';
+
+      s += '<line class="ln2" x1="' +
+        (x + w * 0.5) + '" y1="' +
+        (y - wall) + '" x2="' +
+        (x + w * 0.5) + '" y2="' + y + '"/>';
+    }
+
+    return s;
+  }
+
+  function tower(cx, yb, yt, wb, wt) {
+    var s = "";
+    var levels = 14;
+
+    for (var i = 0; i < levels; i++) {
+      var t1 = i / levels;
+      var t2 = (i + 1) / levels;
+
+      var y1 = yb + (yt - yb) * t1;
+      var y2 = yb + (yt - yb) * t2;
+
+      var w1 = wb + (wt - wb) * t1;
+      var w2 = wb + (wt - wb) * t2;
+
+      var xl = cx - w1 / 2;
+      var xr = cx + w1 / 2;
+      var xl2 = cx - w2 / 2;
+      var xr2 = cx + w2 / 2;
+
+      s += '<line class="ln" x1="' + f(xl) +
+        '" y1="' + f(y1) +
+        '" x2="' + f(xr) +
+        '" y2="' + f(y1) + '"/>';
+
+      s += '<line class="ln2" x1="' + f(xl) +
+        '" y1="' + f(y1) +
+        '" x2="' + f(xr2) +
+        '" y2="' + f(y2) + '"/>';
+
+      s += '<line class="ln2" x1="' + f(xr) +
+        '" y1="' + f(y1) +
+        '" x2="' + f(xl2) +
+        '" y2="' + f(y2) + '"/>';
+    }
+
+    s += '<line class="ln" x1="' + (cx - wb / 2) +
+      '" y1="' + yb + '" x2="' + (cx - wt / 2) +
+      '" y2="' + yt + '"/>';
+
+    s += '<line class="ln" x1="' + (cx + wb / 2) +
+      '" y1="' + yb + '" x2="' + (cx + wt / 2) +
+      '" y2="' + yt + '"/>';
+
+    s += '<line class="ln" x1="' + cx +
+      '" y1="' + yt + '" x2="' + cx +
+      '" y2="' + (yt - 70) + '"/>';
+
+    s += '<circle class="dot" cx="' + cx +
+      '" cy="' + (yt - 70) + '" r="4"/>';
+
+    return s;
+  }
+
+  function arch(x, y, w, h) {
+    var r = w / 2;
+
+    return "M" + x + " " + (y + h) +
+      " V" + (y + r) +
+      " A" + r + " " + r +
+      " 0 0 1 " + (x + w) +
+      " " + (y + r) +
+      " V" + (y + h);
+  }
+
+  function arcade(x0, y, n, w, h, gap) {
+    var s = "";
+
+    for (var i = 0; i < n; i++) {
+      var x = x0 + i * (w + gap);
+
+      s += '<path class="fl" d="' +
+        arch(x, y, w, h) + ' Z"/>';
+
+      s += '<path class="ln" d="' +
+        arch(x + w * 0.14, y + w * 0.14,
+          w * 0.72, h - w * 0.14) + '"/>';
+
+      s += '<path class="ln2" d="' +
+        arch(x + w * 0.28, y + w * 0.28,
+          w * 0.44, h - w * 0.28) + '"/>';
+    }
+
+    return s;
+  }
+
+  function dimline(x1, y, x2) {
+    return '<line class="ln2" x1="' + x1 +
+      '" y1="' + y + '" x2="' + x2 +
+      '" y2="' + y + '"/>' +
+      '<line class="ln2" x1="' + x1 +
+      '" y1="' + (y - 10) +
+      '" x2="' + x1 + '" y2="' + (y + 10) + '"/>' +
+      '<line class="ln2" x1="' + x2 +
+      '" y1="' + (y - 10) +
+      '" x2="' + x2 + '" y2="' + (y + 10) + '"/>';
+  }
+
+  function ground(y) {
+    var s = '<line class="ln" x1="0" y1="' +
+      y + '" x2="' + W + '" y2="' + y + '"/>';
+
+    for (var x = 0; x < W; x += 60) {
+      s += '<line class="ln2" x1="' + x +
+        '" y1="' + (y + 40) +
+        '" x2="' + (x + 90) +
+        '" y2="' + (y + 130) + '"/>';
+    }
+
+    return s;
+  }
+
+  var ART = {
+
+    hero: function () {
+      return hills(4, 520, 70, 26) +
+        saw(180, 770, 9, 78, 62, 90) +
+        tower(1280, 800, 190, 150, 18) +
+        ground(800) +
+        dimline(180, 880, 882);
+    },
+
+    story: function () {
+      var s = "";
+
+      for (var i = 0; i < 7; i++) {
+        s += '<path class="fl" d="M' +
+          (110 + i * 200) + " 820 V420 L" +
+          (210 + i * 200) + " 330 L" +
+          (310 + i * 200) + " 420 V820"/>";
+
+        s += '<path class="ln2" d="M' +
+          (150 + i * 200) + " 820 V450 L" +
+          (210 + i * 200) + " 400 L" +
+          (270 + i * 200) + " 450 V820"/>';
+      }
+
+      return s +
+        '<line class="ln" x1="60" y1="300" x2="1540" y2="300"/>' +
+        ground(820) +
+        dimline(110, 910, 1510);
+    },
+
+    agri: function () {
+      return hills(7, 330, 95, 34) +
+        '<circle class="ln" cx="360" cy="190" r="86"/>' +
+        '<circle class="ln2" cx="360" cy="190" r="124"/>';
+    },
+
+    hosp: function () {
+      return arcade(120, 300, 4, 280, 520, 70) +
+        ground(820) +
+        '<line class="ln" x1="60" y1="300" x2="1540" y2="300"/>';
+    },
+
+    manu: function () {
+      return saw(130, 800, 12, 112, 100, 150) +
+        '<rect class="fl" x="1180" y="330" width="90" height="320"/>' +
+        '<line class="ln" x1="1225" y1="330" x2="1225" y2="250"/>' +
+        ground(800) +
+        dimline(130, 890, 1474);
+    },
+
+    infra: function () {
+      return hills(2, 690, 60, 22) +
+        tower(800, 820, 170, 380, 26) +
+        ground(820);
+    },
+
+    plan: function () {
+      var s = "";
+
+      for (var x = 0; x <= W; x += 80) {
+        s += '<line class="ln2" x1="' + x +
+          '" y1="0" x2="' + x + '" y2="' + H + '"/>';
+      }
+
+      for (var y = 0; y <= H; y += 80) {
+        s += '<line class="ln2" x1="0" y1="' + y +
+          '" x2="' + W + '" y2="' + y + '"/>';
+      }
+
+      s += '<rect class="fl" x="160" y="160" width="560" height="320"/>';
+      s += '<rect class="fl" x="800" y="160" width="400" height="320"/>';
+      s += '<rect class="fl" x="160" y="560" width="320" height="260"/>';
+      s += '<rect class="fl" x="560" y="560" width="640" height="260"/>';
+
+      s += '<circle class="ln" cx="1380" cy="260" r="90"/>';
+      s += '<circle class="ln2" cx="1380" cy="260" r="130"/>';
+      s += '<path class="ln" d="M1380 140 V380 M1260 260 H1500"/>';
+
+      return s +
+        dimline(160, 900, 1200) +
+        dimline(160, 110, 720);
+    },
+
+    close: function () {
+      var s = "";
+      var cx = 800;
+      var vy = 520;
+      var xs = [-720, -540, -380, -240, -130, -50];
+
+      s += hills(1, 640, 0, 14);
+
+      for (var i = 0; i < xs.length; i++) {
+        var l = cx + xs[i];
+        var r = cx - xs[i];
+        var t = 1 - i * 0.1;
+        var wd = 70 * (1 - i * 0.14);
+
+        s += '<rect class="fl" x="' +
+          (l - wd / 2) +
+          '" y="' + (vy - 360 * t) +
+          '" width="' + wd +
+          '" height="' + (900 - vy + 360 * t - 100 * i) + '"/>';
+
+        s += '<rect class="fl" x="' +
+          (r - wd / 2) +
+          '" y="' + (vy - 360 * t) +
+          '" width="' + wd +
+          '" height="' + (900 - vy + 360 * t - 100 * i) + '"/>';
+      }
+
+      s += '<line class="ln" x1="0" y1="' +
+        (vy - 360) +
+        '" x2="' + W +
+        '" y2="' + (vy - 360) + '"/>';
+
+      for (var j = -6; j <= 6; j++) {
+        s += '<line class="ln2" x1="' +
+          (cx + j * 14) +
+          '" y1="' + vy +
+          '" x2="' + (cx + j * 260) +
+          '" y2="' + H + '"/>';
+      }
+
+      return s;
+    }
+
+  };
+
+
+  /* =========================================
+     IMAGE INITIALISATION
+     data-src can be added to any .gr-photo.
+  ========================================= */
+
+  var photos = root.querySelectorAll(".gr-photo[data-art]");
+
+  photos.forEach(function (el) {
+
+    var fn = ART[el.getAttribute("data-art")];
+
+    if (!fn) return;
+
+    var holder = document.createElement("div");
+    holder.className = "gr-photo__art";
+
+    var svg = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "svg"
+    );
+
+    svg.setAttribute("class", "gr-art");
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
+    svg.setAttribute("aria-hidden", "true");
+
+    svg.innerHTML = fn();
+
+    holder.appendChild(svg);
+    el.insertBefore(holder, el.firstChild);
+
+    var src = el.getAttribute("data-src");
+
+    if (src) {
+
+      var img = new Image();
+      var isHero = !!el.closest(".gr-hero");
+
+      img.loading = isHero ? "eager" : "lazy";
+      img.decoding = "async";
+      img.alt = el.getAttribute("data-alt") || "";
+
+      if (isHero) {
+        img.fetchPriority = "high";
+      }
+
+      img.onload = function () {
+        el.classList.add("has-src");
+        holder.setAttribute("aria-hidden", "true");
+      };
+
+      img.onerror = function () {
+        img.remove();
+      };
+
+      img.src = src;
+      el.appendChild(img);
+
+    }
+
+  });
+
+
+  /* =========================================
+     SCROLL REVEALS
+  ========================================= */
+
+  root.classList.add("gr-js");
+
+  var revealItems = root.querySelectorAll(".gr-rv, .gr-photo");
+
+  if ("IntersectionObserver" in window && !reduce) {
+
+    var io = new IntersectionObserver(function (entries) {
+
+      entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+
+        }
+
+      });
+
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -6% 0px"
+    });
+
+    revealItems.forEach(function (el) {
+      io.observe(el);
+    });
+
+    /* Fallback: prevent content remaining hidden */
+    setTimeout(function () {
+
+      revealItems.forEach(function (el) {
+
+        if (!el.classList.contains("is-in")) {
+
+          var rect = el.getBoundingClientRect();
+
+          if (rect.top < window.innerHeight) {
+            el.classList.add("is-in");
+          }
+
+        }
+
+      });
+
+    }, 1800);
+
+  } else {
+
+    revealItems.forEach(function (el) {
+      el.classList.add("is-in");
+    });
+
+  }
+
+
+  /* =========================================
+     SECTION NAVIGATION
+  ========================================= */
+
+  var links = {};
+  var railLinks = root.querySelectorAll(".gr-rail a");
+
+  railLinks.forEach(function (a) {
+
+    links[a.getAttribute("href").slice(1)] = a;
+
+  });
+
+  if ("IntersectionObserver" in window) {
+
+    var sections = root.querySelectorAll("[data-sec]");
+
+    var so = new IntersectionObserver(function (entries) {
+
+      entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+
+          Object.keys(links).forEach(function (key) {
+            links[key].classList.remove("is-on");
+          });
+
+          if (links[entry.target.id]) {
+            links[entry.target.id].classList.add("is-on");
+          }
+
+        }
+
+      });
+
+    }, {
+      rootMargin: "-45% 0px -50% 0px"
+    });
+
+    sections.forEach(function (section) {
+      so.observe(section);
+    });
+
+  }
+
+
+  /* =========================================
+     PROGRESS AND PARALLAX
+  ========================================= */
+
+  var bar = root.querySelector(".gr-progress b");
+
+  var parallax = root.querySelectorAll(
+    "[data-parallax] .gr-photo__art"
+  );
+
+  var tick = false;
+
+  function frame() {
+
+    tick = false;
+
+    var max =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    if (bar && max > 0) {
+
+      bar.style.transform =
+        "scaleX(" +
+        Math.min(1, Math.max(0, window.scrollY / max)) +
+        ")";
+
+    }
+
+    if (!reduce) {
+
+      parallax.forEach(function (el) {
+
+        var box = el.parentNode.getBoundingClientRect();
+
+        if (box.bottom < 0 || box.top > window.innerHeight) {
+          return;
+        }
+
+        var offset =
+          (box.top + box.height / 2 - window.innerHeight / 2) * -0.07;
+
+        el.style.setProperty("--py", f(offset) + "px");
+
+      });
+
+    }
+
+  }
+
+  function requestFrame() {
+
+    if (!tick) {
+
+      tick = true;
+      requestAnimationFrame(frame);
+
+    }
+
+  }
+
+  window.addEventListener("scroll", requestFrame, {
+    passive: true
+  });
+
+  window.addEventListener("resize", requestFrame);
+
+  frame();
+
+
+  /* =========================================
+     SMOOTH SECTION LINKS
+  ========================================= */
+
+  root.querySelectorAll('a[href^="#"]').forEach(function (a) {
+
+    a.addEventListener("click", function (event) {
+
+      var target = root.querySelector(
+        a.getAttribute("href")
+      );
+
+      if (!target) return;
+
+      event.preventDefault();
+
+      target.scrollIntoView({
+        behavior: reduce ? "auto" : "smooth",
+        block: "start"
+      });
+
+    });
+
+  });
+
+})();
+</script>
